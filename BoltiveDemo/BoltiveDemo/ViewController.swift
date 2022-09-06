@@ -26,29 +26,31 @@ class ViewController: UIViewController, GADBannerViewDelegate {
         bannerView.delegate = self
         bannerView.adUnitID = gamAdUnitId
         
-        addBannerViewToView(bannerView)
-        
         bannerView.load(GADRequest())
     }
     
-    func addBannerViewToView(_ bannerView: GAMBannerView) {
+    func addBannerViewToView(_ bannerView: UIView) {
         bannerView.translatesAutoresizingMaskIntoConstraints = false
         view.addSubview(bannerView)
         
         let constraints = [
-            bannerView.bottomAnchor.constraint(equalTo: view.safeAreaLayoutGuide.bottomAnchor),
+            bannerView.centerYAnchor.constraint(equalTo: view.safeAreaLayoutGuide.centerYAnchor),
             bannerView.centerXAnchor.constraint(equalTo: view.safeAreaLayoutGuide.centerXAnchor)
         ]
         
         NSLayoutConstraint.activate(constraints)
     }
     
-    
     // MARK: GADBannerViewDelegate
     func bannerViewDidReceiveAd(_ bannerView: GADBannerView) {
+        addBannerViewToView(bannerView)
         monitor.capture(bannerView: bannerView) { [weak self] view in
             self?.bannerView.removeFromSuperview()
         }
     }
+    
+    @IBAction func loadAdTapped(_ sender: UIButton) {
+        bannerView.removeFromSuperview()
+        bannerView.load(GADRequest())
+    }
 }
-
