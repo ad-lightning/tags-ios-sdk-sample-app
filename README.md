@@ -4,7 +4,7 @@
 
 ### Manual download 
 
-Download and unzip the SDK framework and copy the `Boltive.xcframework` into your Xcode project.
+Download and unzip the SDK framework and drag and drop the `boltive-ios-sdk.xcframework` into your Xcode project.
 
 ## Google Ad Manager
 
