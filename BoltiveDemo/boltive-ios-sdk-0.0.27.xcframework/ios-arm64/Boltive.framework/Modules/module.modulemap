@@ -1,4 +1,0 @@
-framework module Boltive {
-  header "Boltive-Swift.h"
-  requires objc
-}
