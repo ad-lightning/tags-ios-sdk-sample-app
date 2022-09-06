@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		5321E9D128C75D2800B7B48B /* boltive-ios-sdk-0.0.27.xcframework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5321E9D028C75D2800B7B48B /* boltive-ios-sdk-0.0.27.xcframework */; };
 		53E58E7028C51D8900ED8606 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 53E58E6F28C51D8900ED8606 /* AppDelegate.swift */; };
 		53E58E7228C51D8900ED8606 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 53E58E7128C51D8900ED8606 /* SceneDelegate.swift */; };
 		53E58E7428C51D8900ED8606 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 53E58E7328C51D8900ED8606 /* ViewController.swift */; };
@@ -14,7 +15,6 @@
 		53E58E7928C51D8A00ED8606 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 53E58E7828C51D8A00ED8606 /* Assets.xcassets */; };
 		53E58E7C28C51D8A00ED8606 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 53E58E7A28C51D8A00ED8606 /* LaunchScreen.storyboard */; };
 		53E58E8528C51E5800ED8606 /* GoogleMobileAds in Frameworks */ = {isa = PBXBuildFile; productRef = 53E58E8428C51E5800ED8606 /* GoogleMobileAds */; };
-		53F3F05E28C52DEB0064FAB9 /* Boltive.xcframework in Frameworks */ = {isa = PBXBuildFile; fileRef = 53F3F05D28C52DEB0064FAB9 /* Boltive.xcframework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXCopyFilesBuildPhase section */
@@ -31,6 +31,7 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
+		5321E9D028C75D2800B7B48B /* boltive-ios-sdk-0.0.27.xcframework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcframework; path = "boltive-ios-sdk-0.0.27.xcframework"; sourceTree = "<group>"; };
 		53E58E6C28C51D8900ED8606 /* BoltiveDemo.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = BoltiveDemo.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		53E58E6F28C51D8900ED8606 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		53E58E7128C51D8900ED8606 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -39,7 +40,6 @@
 		53E58E7828C51D8A00ED8606 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		53E58E7B28C51D8A00ED8606 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		53E58E7D28C51D8A00ED8606 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		53F3F05D28C52DEB0064FAB9 /* Boltive.xcframework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcframework; path = Boltive.xcframework; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -48,7 +48,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				53E58E8528C51E5800ED8606 /* GoogleMobileAds in Frameworks */,
-				53F3F05E28C52DEB0064FAB9 /* Boltive.xcframework in Frameworks */,
+				5321E9D128C75D2800B7B48B /* boltive-ios-sdk-0.0.27.xcframework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -58,7 +58,7 @@
 		53E58E6328C51D8900ED8606 = {
 			isa = PBXGroup;
 			children = (
-				53F3F05D28C52DEB0064FAB9 /* Boltive.xcframework */,
+				5321E9D028C75D2800B7B48B /* boltive-ios-sdk-0.0.27.xcframework */,
 				53E58E6E28C51D8900ED8606 /* BoltiveDemo */,
 				53E58E6D28C51D8900ED8606 /* Products */,
 			);
