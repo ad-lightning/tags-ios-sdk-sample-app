@@ -1,23 +1,29 @@
-# Boltive iOS SDK User Guide
+# Boltive iOS SDK
 
-## Integration guide
+Boltive iOS SDK is a native iOS solution for intercepting malicious ad creatives in mobile banner ads.  
 
-### Manual download 
+**Quick facts:**
 
-Download and unzip the SDK framework and drag and drop the `boltive-ios-sdk.xcframework` into your Xcode project.
+- The minimum supported iOS version is 14.0.  
 
-## Google Ad Manager
+- SDK supports banner ad format. 
 
-Google Ad Manager assumes integration of Google Mobile Ads SDK into the app.
+- We assume that the app integrates Google Mobile Ads SDK and works with Google Ad Manager, however the SDK is not limited by this assumption, see [this section](https://github.com/ad-lightning/android-sdk-sample-app#other-ad-networks-and-sdks).
 
-References: 
+- Current SDK version is 0.1 (private beta).
 
-- [GMA SDK Get Started](https://developers.google.com/ad-manager/mobile-ads-sdk/ios/quick-start)
-- [Banner Ads](https://developers.google.com/ad-manager/mobile-ads-sdk/ios/banner)
+# User guide
 
-### BoltiveMonitor API
+## Integration
 
-`BoltiveMonitor` object can be either instantiated in a view controller or a view model object context - ideally the one designated as [GADBannerViewDelegate](https://developers.google.com/ad-manager/mobile-ads-sdk/ios/api/reference/Protocols/GADBannerViewDelegate) - so that the lifetime of the `BoltiveMonitor` is tied to the lifetime of the delegate and that of the ad banner context. Pass `clientId` and `adUnitId`(for GAM ad unit) as params.
+1. Download and unzip the SDK framework. 
+2. Drag and drop `boltive-ios-sdk.xcframework` into your Xcode project.
+
+**Note:** Sample app project in this repo already contains a reference to the SDK in the project root, however you have to manually download and unzip the framework into the project root directory `BoltiveDemo`.
+
+## API
+
+`BoltiveMonitor` object can be instantiated either in a view controller or a view model object context - ideally the one designated as [GADBannerViewDelegate](https://developers.google.com/ad-manager/mobile-ads-sdk/ios/api/reference/Protocols/GADBannerViewDelegate) - so that the lifetime of the `BoltiveMonitor` is tied to the lifetime of the delegate and that of the ad banner context. Pass `clientId` and `adUnitId`(for GAM ad unit) as params.
 
 ```swift
 let boltiveMonitor = BoltiveMonitor(configuration: BoltiveConfiguration(clientId: "<your client id>", adUnitId: "<your ad unit id>"))
@@ -38,3 +44,13 @@ In the provided callback closure you can do any side effects. The call of this c
 ## Other Ad Networks and SDKs
 
 `Boltive SDK` was tested against GAM and Google Mobile Ads SDK integration.  However `BoltiveMonitor` API is designed to be SDK-agnostic.  The only assumption it makes is that the ad is rendered in the `WKWebView` object contained somewhere within a `UIView`-based banner view hierarchy.  Most ad SDKs provide callback mechanisms similar to a `GADBannerViewDelegate`'s' `bannerViewDidReceiveAd` method in which you can use `BoltiveMonitor` to capture the banner - as described above for the GAM scenario.
+
+## Google Ad Manager
+
+Google Ad Manager assumes integration of Google Mobile Ads SDK into the app.
+
+References: 
+
+- [GMA SDK Get Started](https://developers.google.com/ad-manager/mobile-ads-sdk/ios/quick-start)
+- [Banner Ads](https://developers.google.com/ad-manager/mobile-ads-sdk/ios/banner)
+
