@@ -4,7 +4,7 @@ Boltive iOS SDK is a native iOS solution for intercepting malicious ad creatives
 
 **Quick facts:**
 
-- The minimum supported iOS version is 14.0.  
+- The minimum supported iOS version is 14.0 (this requirement can be lowered on demand).
 
 - SDK supports banner ad format. 
 
