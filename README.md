@@ -12,8 +12,6 @@ Boltive iOS SDK is a native iOS solution for intercepting malicious ad creatives
 
 - Current SDK version is 0.1 (private beta).
 
-# User guide
-
 ## Integration
 
 1. Download and unzip the SDK framework. 
@@ -21,7 +19,7 @@ Boltive iOS SDK is a native iOS solution for intercepting malicious ad creatives
 
 **Note:** Sample app project in this repo already contains a reference to the SDK in the project root, however you have to manually download and unzip the framework into the project root directory `BoltiveDemo`.
 
-## API
+## User Guide
 
 `BoltiveMonitor` object can be instantiated either in a view controller or a view model object context - ideally the one designated as [GADBannerViewDelegate](https://developers.google.com/ad-manager/mobile-ads-sdk/ios/api/reference/Protocols/GADBannerViewDelegate) - so that the lifetime of the `BoltiveMonitor` is tied to the lifetime of the delegate and that of the ad banner context. Pass `clientId` and `adUnitId`(for GAM ad unit) as params.
 
