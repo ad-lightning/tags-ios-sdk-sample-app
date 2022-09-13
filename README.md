@@ -52,7 +52,7 @@ let boltiveMonitor = BoltiveMonitor(configuration: BoltiveConfiguration(clientId
 You should call `BoltiveMonitor`'s `captureInterstitial` method right after presenting interstitial ad(f.e. after calling `GADInterstitialAd`'s `present(fromRootViewController: UIViewController)`).
 
 ```swift
-self?.monitor.captureInterstitial { [weak self] in
+monitor.captureInterstitial { [weak self] in
     // do any side effect here, f.e. load another interstitial ad
 }
 ```
