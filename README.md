@@ -49,16 +49,12 @@ In the provided callback closure you can do any side effects. The call of this c
 let boltiveMonitor = BoltiveMonitor(configuration: BoltiveConfiguration(clientId: "<your client id>", adUnitId: "<your ad unit id>"))
 ```
 
-In the `completionHandler` callback of a `GADInterstitialAd`'s `load(withAdUnitID: String, request: GADRequest?, completionHandler: GADInterstitialAdLoadCompletionHandler(GADInterstitialAd?, Error?) -> Void)` static method you can capture interstitial: 
+You should call `BoltiveMonitor`'s `captureInterstitial` method right after presenting interstitial ad(f.e. after calling `GADInterstitialAd`'s `present(fromRootViewController: UIViewController)`).
 
 ```swift
-GADInterstitialAd.load(withAdUnitID: "<ad unit id>", request: GAMRequest()) { [weak self] ad, error in
-    if ad != nil {
-        self?.monitor.captureInterstitial { [weak self] in
-            // do any side effect here, f.e. load another interstitial ad
-        }
+    self?.monitor.captureInterstitial { [weak self] in
+        // do any side effect here, f.e. load another interstitial ad
     }
-}
 ```
 
 **Note**: Unlike with banner ads, `Boltive SDK` dismisses interstitial ad by itself. You can load new ad in provided `adBlocked` callback or do any other side effect.
