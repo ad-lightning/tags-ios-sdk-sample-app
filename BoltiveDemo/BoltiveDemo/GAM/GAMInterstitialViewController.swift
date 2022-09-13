@@ -14,7 +14,7 @@ fileprivate let testAdUnitId = "ca-app-pub-3940256099942544/4411468910"
 
 class GAMInterstitialViewController: UIViewController {
     
-    let loadButton =  UIButton()
+    let loadButton = UIButton()
     var interstitial: GADInterstitialAd?
     
     let monitor = BoltiveMonitor(configuration: BoltiveConfiguration(clientId: "adl-test",
