@@ -43,11 +43,7 @@ In the provided callback closure you can do any side effects. The call of this c
 
 ### Interstitial
 
-`BoltiveMonitor` can also work with interstitial ads. Same as with banner ads, `BoltiveMonitor` object can be instantiated either in a view controller or a view model object context - the one which handles interstitial ad loading.
-
-```swift
-let boltiveMonitor = BoltiveMonitor(configuration: BoltiveConfiguration(clientId: "<your client id>", adUnitId: "<your ad unit id>"))
-```
+`BoltiveMonitor` can also work with interstitial ads.  Just like for banners `BoltiveMonitor` object can be instantiated either in a view controller or a view model object context - the one which handles interstitial ad loading.
 
 You should call `BoltiveMonitor`'s `captureInterstitial` method right after presenting interstitial ad(f.e. after calling `GADInterstitialAd`'s `present(fromRootViewController: UIViewController)`).
 
@@ -57,7 +53,7 @@ monitor.captureInterstitial { [weak self] in
 }
 ```
 
-**Note**: Unlike with banner ads, `Boltive SDK` dismisses interstitial ad by itself. You can load new ad in provided `adBlocked` callback or do any other side effect.
+**Note**: Unlike for banner ads, `Boltive SDK` dismisses a flagged interstitial ad right away.  You can load a new interstitial in the provided `adBlocked` callback closure or do any other side effect in it. 
 
 ## Other Ad Networks and SDKs
 
