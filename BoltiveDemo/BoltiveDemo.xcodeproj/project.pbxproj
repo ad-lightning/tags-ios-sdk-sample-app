@@ -17,6 +17,7 @@
 		53EA20EA28D080A500DE18EA /* TestCaseListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 53EA20E928D080A500DE18EA /* TestCaseListViewController.swift */; };
 		53EA20ED28D0899900DE18EA /* TestCase.swift in Sources */ = {isa = PBXBuildFile; fileRef = 53EA20EC28D0899900DE18EA /* TestCase.swift */; };
 		53EA20EF28D089EF00DE18EA /* TestCaseList.swift in Sources */ = {isa = PBXBuildFile; fileRef = 53EA20EE28D089EF00DE18EA /* TestCaseList.swift */; };
+		53EA20F128D0945C00DE18EA /* GAMInterstitialViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 53EA20F028D0945C00DE18EA /* GAMInterstitialViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXCopyFilesBuildPhase section */
@@ -44,6 +45,7 @@
 		53EA20E928D080A500DE18EA /* TestCaseListViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TestCaseListViewController.swift; sourceTree = "<group>"; };
 		53EA20EC28D0899900DE18EA /* TestCase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TestCase.swift; sourceTree = "<group>"; };
 		53EA20EE28D089EF00DE18EA /* TestCaseList.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TestCaseList.swift; sourceTree = "<group>"; };
+		53EA20F028D0945C00DE18EA /* GAMInterstitialViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GAMInterstitialViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -79,12 +81,12 @@
 		53E58E6E28C51D8900ED8606 /* BoltiveDemo */ = {
 			isa = PBXGroup;
 			children = (
+				53E58E7D28C51D8A00ED8606 /* Info.plist */,
 				53E58E6F28C51D8900ED8606 /* AppDelegate.swift */,
+				53EA20F228D09B1900DE18EA /* GAM */,
 				53E58E7128C51D8900ED8606 /* SceneDelegate.swift */,
-				53E58E7328C51D8900ED8606 /* GAMBannerViewController.swift */,
 				53E58E7828C51D8A00ED8606 /* Assets.xcassets */,
 				53E58E7A28C51D8A00ED8606 /* LaunchScreen.storyboard */,
-				53E58E7D28C51D8A00ED8606 /* Info.plist */,
 				53EA20EB28D0898900DE18EA /* TestCase */,
 			);
 			path = BoltiveDemo;
@@ -98,6 +100,15 @@
 				53EA20EE28D089EF00DE18EA /* TestCaseList.swift */,
 			);
 			path = TestCase;
+			sourceTree = "<group>";
+		};
+		53EA20F228D09B1900DE18EA /* GAM */ = {
+			isa = PBXGroup;
+			children = (
+				53E58E7328C51D8900ED8606 /* GAMBannerViewController.swift */,
+				53EA20F028D0945C00DE18EA /* GAMInterstitialViewController.swift */,
+			);
+			path = GAM;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -183,6 +194,7 @@
 				53E58E7028C51D8900ED8606 /* AppDelegate.swift in Sources */,
 				53E58E7228C51D8900ED8606 /* SceneDelegate.swift in Sources */,
 				53EA20EF28D089EF00DE18EA /* TestCaseList.swift in Sources */,
+				53EA20F128D0945C00DE18EA /* GAMInterstitialViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

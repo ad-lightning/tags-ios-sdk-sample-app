@@ -13,16 +13,10 @@ class TestCaseList {
         return [
             [
                 "Google Ad Manager" : [
-                    TestCase(title: "Banner", viewController: GAMBannerViewController())
+                    TestCase(title: "Banner", viewController: GAMBannerViewController()),
+                    TestCase(title: "Interstitial", viewController: GAMInterstitialViewController())
                 ]
             ]
-        ]
-    }
-    
-    static var gamTestCases: [TestCase] {
-        
-        return [
-            TestCase(title: "GAM Banner", viewController: GAMBannerViewController())
         ]
     }
 }
