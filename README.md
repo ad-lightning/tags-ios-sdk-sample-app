@@ -6,11 +6,11 @@ Boltive iOS SDK is a native iOS solution for intercepting malicious ad creatives
 
 - The minimum supported iOS version is 14.0 (this requirement can be lowered on demand).
 
-- SDK supports banner ad format. 
+- SDK supports banner and interstitial ad formats. 
 
 - We assume that the app integrates Google Mobile Ads SDK and works with Google Ad Manager, however the SDK is not limited by this assumption, see [this section](https://github.com/ad-lightning/android-sdk-sample-app#other-ad-networks-and-sdks).
 
-- Current SDK version is 0.1 (private beta).
+- Current SDK version is 0.2 (private beta).
 
 ## Integration
 
@@ -37,9 +37,11 @@ boltiveMonitor.capture(bannerView: bannerView) { bannerView in
 }
 ```
 
-In the provided callback closure you can do any side effects. The call of this closure signals that the rendered ad is flagged by `BoltiveMonitor`. Take a note that every time the ad is flagged, SDK stops monitoring it, so make sure you recapture the banner in every `bannerViewDidReceiveAd` delegate call.
+The call of this closure signals that the rendered ad is flagged by `BoltiveMonitor`. **In the provided callback closure you should reload the banner and/or do any other side effects as needed, f.e. hide the banner or use a different ad unit.**
 
-**Note**: Unlike web, on mobile `BoltiveMonitor` does not actually block or prevent any ads from rendering - it only reports them and signals to the app native code.  It is your responsibility as the app developer to take appropriate action in the callback closure: i.e. to reload and refresh the banner, render a different ad unit, remove the banner alltogether etc.  The most common action to take would be to repeat banner loading by calling `bannerView.load(_ request: GADRequest?)` method.  
+**Note**: Unlike web, on mobile `BoltiveMonitor` does not actually block or prevent **banner ads** (it is different for interstitials, they are dismissed automatically) from rendering - it only reports them and signals to the app native code.  **It is your responsibility as the app developer to take appropriate action in the callback closure**: i.e. to reload and refresh the banner, render a different ad unit, remove the banner alltogether etc.  The most common action to take would be to repeat banner loading by calling `bannerView.load(_ request: GADRequest?)` method.  
+
+Also please note that every time the ad is flagged, SDK stops monitoring it, so **make sure you recapture the banner in every `bannerViewDidReceiveAd` delegate call**.
 
 ### Interstitial
 
@@ -53,7 +55,7 @@ monitor.captureInterstitial { [weak self] in
 }
 ```
 
-**Note**: Unlike banner ads, `Boltive SDK` dismisses a flagged interstitial ad right away.  You can load a new interstitial in the provided `adBlocked` callback closure or perform any additional side effects in it.
+**Note**: Unlike banner ads, `Boltive SDK` actually blocks and dismisses a flagged interstitial ad right away.  You can load a new interstitial in the provided `adBlocked` callback closure or perform any additional side effects in it.
 
 ## Other Ad Networks and SDKs
 
