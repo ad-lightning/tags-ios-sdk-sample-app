@@ -21,6 +21,8 @@ Boltive iOS SDK is a native iOS solution for intercepting malicious ad creatives
 
 ## User Guide
 
+### Banner 
+
 `BoltiveMonitor` object can be instantiated either in a view controller or a view model object context - ideally the one designated as [GADBannerViewDelegate](https://developers.google.com/ad-manager/mobile-ads-sdk/ios/api/reference/Protocols/GADBannerViewDelegate) - so that the lifetime of the `BoltiveMonitor` is tied to the lifetime of the delegate and that of the ad banner context. Pass `clientId` and `adUnitId`(for GAM ad unit) as params.
 
 ```swift
@@ -39,6 +41,24 @@ In the provided callback closure you can do any side effects. The call of this c
 
 **Note**: Unlike web, on mobile `BoltiveMonitor` does not actually block or prevent any ads from rendering - it only reports them and signals to the app native code.  It is your responsibility as the app developer to take appropriate action in the callback closure: i.e. to reload and refresh the banner, render a different ad unit, remove the banner alltogether etc.  The most common action to take would be to repeat banner loading by calling `bannerView.load(_ request: GADRequest?)` method.  
 
+### Interstitial
+
+`BoltiveMonitor` can also work with interstitial ads. Same as with banner ads, `BoltiveMonitor` object can be instantiated either in a view controller or a view model object context - the one which handles interstitial ad loading.
+
+```swift
+let boltiveMonitor = BoltiveMonitor(configuration: BoltiveConfiguration(clientId: "<your client id>", adUnitId: "<your ad unit id>"))
+```
+
+You should call `BoltiveMonitor`'s `captureInterstitial` method right after presenting interstitial ad(f.e. after calling `GADInterstitialAd`'s `present(fromRootViewController: UIViewController)`).
+
+```swift
+monitor.captureInterstitial { [weak self] in
+    // do any side effect here, f.e. load another interstitial ad
+}
+```
+
+**Note**: Unlike with banner ads, `Boltive SDK` dismisses interstitial ad by itself. You can load new ad in provided `adBlocked` callback or do any other side effect.
+
 ## Other Ad Networks and SDKs
 
 `Boltive SDK` was tested against GAM and Google Mobile Ads SDK integration.  However `BoltiveMonitor` API is designed to be SDK-agnostic.  The only assumption it makes is that the ad is rendered in the `WKWebView` object contained somewhere within a `UIView`-based banner view hierarchy.  Most ad SDKs provide callback mechanisms similar to a `GADBannerViewDelegate`'s' `bannerViewDidReceiveAd` method in which you can use `BoltiveMonitor` to capture the banner - as described above for the GAM scenario.
@@ -51,4 +71,4 @@ References:
 
 - [GMA SDK Get Started](https://developers.google.com/ad-manager/mobile-ads-sdk/ios/quick-start)
 - [Banner Ads](https://developers.google.com/ad-manager/mobile-ads-sdk/ios/banner)
-
+- [Interstitial Ads](https://developers.google.com/ad-manager/mobile-ads-sdk/ios/interstitial)

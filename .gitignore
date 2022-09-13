@@ -1,3 +1,6 @@
+### Boltive ###
+*.xcframework
+
 ### macOS ###
 # General
 .DS_Store
