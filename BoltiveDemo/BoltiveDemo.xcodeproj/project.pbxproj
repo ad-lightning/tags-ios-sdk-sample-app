@@ -7,9 +7,10 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		5387249D28DC7AE50048C3FA /* boltive-ios-sdk.xcframework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5321E9D228C76E7C00B7B48B /* boltive-ios-sdk.xcframework */; };
-		5387249E28DC7AE50048C3FA /* boltive-ios-sdk.xcframework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 5321E9D228C76E7C00B7B48B /* boltive-ios-sdk.xcframework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		538724A128DC7D370048C3FA /* AppLovinSDK in Frameworks */ = {isa = PBXBuildFile; productRef = 538724A028DC7D370048C3FA /* AppLovinSDK */; };
+		538724A428DC7D800048C3FA /* MAXBannerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 538724A328DC7D800048C3FA /* MAXBannerViewController.swift */; };
+		538724A728DC7EB00048C3FA /* boltive-ios-sdk.xcframework in Frameworks */ = {isa = PBXBuildFile; fileRef = 538724A528DC7EA90048C3FA /* boltive-ios-sdk.xcframework */; };
+		538724A828DC7EB00048C3FA /* boltive-ios-sdk.xcframework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 538724A528DC7EA90048C3FA /* boltive-ios-sdk.xcframework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		53E58E7028C51D8900ED8606 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 53E58E6F28C51D8900ED8606 /* AppDelegate.swift */; };
 		53E58E7228C51D8900ED8606 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 53E58E7128C51D8900ED8606 /* SceneDelegate.swift */; };
 		53E58E7428C51D8900ED8606 /* GAMBannerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 53E58E7328C51D8900ED8606 /* GAMBannerViewController.swift */; };
@@ -29,7 +30,7 @@
 			dstPath = "";
 			dstSubfolderSpec = 10;
 			files = (
-				5387249E28DC7AE50048C3FA /* boltive-ios-sdk.xcframework in Embed Frameworks */,
+				538724A828DC7EB00048C3FA /* boltive-ios-sdk.xcframework in Embed Frameworks */,
 			);
 			name = "Embed Frameworks";
 			runOnlyForDeploymentPostprocessing = 0;
@@ -37,7 +38,8 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
-		5321E9D228C76E7C00B7B48B /* boltive-ios-sdk.xcframework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcframework; path = "boltive-ios-sdk.xcframework"; sourceTree = "<group>"; };
+		538724A328DC7D800048C3FA /* MAXBannerViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MAXBannerViewController.swift; sourceTree = "<group>"; };
+		538724A528DC7EA90048C3FA /* boltive-ios-sdk.xcframework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcframework; path = "boltive-ios-sdk.xcframework"; sourceTree = "<group>"; };
 		53E58E6C28C51D8900ED8606 /* BoltiveDemo.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = BoltiveDemo.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		53E58E6F28C51D8900ED8606 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		53E58E7128C51D8900ED8606 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -56,7 +58,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				5387249D28DC7AE50048C3FA /* boltive-ios-sdk.xcframework in Frameworks */,
+				538724A728DC7EB00048C3FA /* boltive-ios-sdk.xcframework in Frameworks */,
 				538724A128DC7D370048C3FA /* AppLovinSDK in Frameworks */,
 				53E58E8528C51E5800ED8606 /* GoogleMobileAds in Frameworks */,
 			);
@@ -65,10 +67,18 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		538724A228DC7D600048C3FA /* AppLovin MAX */ = {
+			isa = PBXGroup;
+			children = (
+				538724A328DC7D800048C3FA /* MAXBannerViewController.swift */,
+			);
+			path = "AppLovin MAX";
+			sourceTree = "<group>";
+		};
 		53E58E6328C51D8900ED8606 = {
 			isa = PBXGroup;
 			children = (
-				5321E9D228C76E7C00B7B48B /* boltive-ios-sdk.xcframework */,
+				538724A528DC7EA90048C3FA /* boltive-ios-sdk.xcframework */,
 				53E58E6E28C51D8900ED8606 /* BoltiveDemo */,
 				53E58E6D28C51D8900ED8606 /* Products */,
 			);
@@ -87,9 +97,10 @@
 			children = (
 				53E58E7D28C51D8A00ED8606 /* Info.plist */,
 				53E58E6F28C51D8900ED8606 /* AppDelegate.swift */,
-				53EA20F228D09B1900DE18EA /* GAM */,
 				53E58E7128C51D8900ED8606 /* SceneDelegate.swift */,
 				53E58E7828C51D8A00ED8606 /* Assets.xcassets */,
+				538724A228DC7D600048C3FA /* AppLovin MAX */,
+				53EA20F228D09B1900DE18EA /* GAM */,
 				53E58E7A28C51D8A00ED8606 /* LaunchScreen.storyboard */,
 				53EA20EB28D0898900DE18EA /* TestCase */,
 			);
@@ -197,6 +208,7 @@
 				53EA20EA28D080A500DE18EA /* TestCaseListViewController.swift in Sources */,
 				53EA20ED28D0899900DE18EA /* TestCase.swift in Sources */,
 				53E58E7428C51D8900ED8606 /* GAMBannerViewController.swift in Sources */,
+				538724A428DC7D800048C3FA /* MAXBannerViewController.swift in Sources */,
 				53E58E7028C51D8900ED8606 /* AppDelegate.swift in Sources */,
 				53E58E7228C51D8900ED8606 /* SceneDelegate.swift in Sources */,
 				53EA20EF28D089EF00DE18EA /* TestCaseList.swift in Sources */,
@@ -339,7 +351,7 @@
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
-				DEVELOPMENT_TEAM = "";
+				DEVELOPMENT_TEAM = L9295BF929;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = BoltiveDemo/Info.plist;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
@@ -367,7 +379,7 @@
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
-				DEVELOPMENT_TEAM = "";
+				DEVELOPMENT_TEAM = L9295BF929;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = BoltiveDemo/Info.plist;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
