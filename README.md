@@ -16,6 +16,7 @@ Boltive iOS SDK is a native iOS solution for intercepting malicious ad creatives
 
 1. Download and unzip the SDK framework. 
 2. Drag and drop `boltive-ios-sdk.xcframework` into your Xcode project.
+3. Proceed to your target settings. Make sure that on `General` tab under `Frameworks, Libraries and Embedded Content` section `boltive-ios-sdk.xcframework` marked as `Embed & Sign`. 
 
 **Note:** Sample app project in this repo already contains a reference to the SDK in the project root, however you have to manually download and unzip the framework into the project root directory `BoltiveDemo`.
 
@@ -47,7 +48,7 @@ Also please note that every time the ad is flagged, SDK stops monitoring it, so 
 
 `BoltiveMonitor` also supports capturing interstitial ads with a different API: `BoltiveMonitor.captureInterstitial`.  Just like for banners `BoltiveMonitor` object should be instantiated first either in a view controller or a view model object context - the one which manages interstitial presentation.
 
-Add a all to `BoltiveMonitor.captureInterstitial` method right after presenting the interstitial ad: f.e. after calling `GADInterstitialAd.present(fromRootViewController: UIViewController)`.
+Add a call of `BoltiveMonitor.captureInterstitial` method right after presenting the interstitial ad: f.e. after calling `GADInterstitialAd.present(fromRootViewController: UIViewController)`.
 
 ```swift
 monitor.captureInterstitial { [weak self] in
@@ -70,3 +71,27 @@ References:
 - [GMA SDK Get Started](https://developers.google.com/ad-manager/mobile-ads-sdk/ios/quick-start)
 - [Banner Ads](https://developers.google.com/ad-manager/mobile-ads-sdk/ios/banner)
 - [Interstitial Ads](https://developers.google.com/ad-manager/mobile-ads-sdk/ios/interstitial)
+
+## AppLovin MAX 
+
+AppLovin MAX assumes integration of AppLovin MAX SDK into the app.
+
+References: 
+
+- [AppLovin MAX SDK Integration](https://dash.applovin.com/documentation/mediation/ios/getting-started/integration)
+- [Banner Ads](https://dash.applovin.com/documentation/mediation/ios/getting-started/banners)
+- [Interstitial Ads](https://dash.applovin.com/documentation/mediation/ios/getting-started/interstitials)
+
+## BoltiveDemo App 
+
+To get started with the demo app, follow these steps:
+
+1. Follow instructions from `Integration` section. 
+2. Update Swift Package Manager caches(you can do it by right clicking on `Package Dependancies` section on left panel of `Xcode` and choosing `Reset Package Caches` option). 
+
+**Note**: In order to run demo examples of integration with `AppLovin MAX` you need to create your own MAX Direct Sold Campaign and MAX ad units. For further information check out these links: 
+
+- [Direct Sold Campaign](https://dash.applovin.com/documentation/mediation/features/direct-sold)
+- [Create Ad Unit](https://dash.applovin.com/documentation/mediation/ui-max/ad-units/create-ad-unit)
+
+After creating ad units, copy and paste ad unit id into `bannerAdUnitId` property in `MAXBannerViewController`'s file for banner ads and into `interstitialAdUnitId` property in `MAXInterstitialViewController`'s file for interstitial ads. Usually, it takes some time for ad units to start loading ads.
