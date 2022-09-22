@@ -19,7 +19,8 @@ class TestCaseList {
             ],
             [
                 "Applovin MAX" : [
-                    TestCase(title: "Banner", viewController: MAXBannerViewController())
+                    TestCase(title: "Banner", viewController: MAXBannerViewController()),
+                    TestCase(title: "Interstitial", viewController: MAXInterstitialViewController())
                 ]
             ]
         ]

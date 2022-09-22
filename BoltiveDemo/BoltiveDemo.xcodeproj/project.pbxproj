@@ -11,6 +11,7 @@
 		538724A428DC7D800048C3FA /* MAXBannerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 538724A328DC7D800048C3FA /* MAXBannerViewController.swift */; };
 		538724A728DC7EB00048C3FA /* boltive-ios-sdk.xcframework in Frameworks */ = {isa = PBXBuildFile; fileRef = 538724A528DC7EA90048C3FA /* boltive-ios-sdk.xcframework */; };
 		538724A828DC7EB00048C3FA /* boltive-ios-sdk.xcframework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 538724A528DC7EA90048C3FA /* boltive-ios-sdk.xcframework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		538724AA28DC89A90048C3FA /* MAXInterstitialViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 538724A928DC89A90048C3FA /* MAXInterstitialViewController.swift */; };
 		53E58E7028C51D8900ED8606 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 53E58E6F28C51D8900ED8606 /* AppDelegate.swift */; };
 		53E58E7228C51D8900ED8606 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 53E58E7128C51D8900ED8606 /* SceneDelegate.swift */; };
 		53E58E7428C51D8900ED8606 /* GAMBannerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 53E58E7328C51D8900ED8606 /* GAMBannerViewController.swift */; };
@@ -40,6 +41,7 @@
 /* Begin PBXFileReference section */
 		538724A328DC7D800048C3FA /* MAXBannerViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MAXBannerViewController.swift; sourceTree = "<group>"; };
 		538724A528DC7EA90048C3FA /* boltive-ios-sdk.xcframework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcframework; path = "boltive-ios-sdk.xcframework"; sourceTree = "<group>"; };
+		538724A928DC89A90048C3FA /* MAXInterstitialViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MAXInterstitialViewController.swift; sourceTree = "<group>"; };
 		53E58E6C28C51D8900ED8606 /* BoltiveDemo.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = BoltiveDemo.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		53E58E6F28C51D8900ED8606 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		53E58E7128C51D8900ED8606 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -71,6 +73,7 @@
 			isa = PBXGroup;
 			children = (
 				538724A328DC7D800048C3FA /* MAXBannerViewController.swift */,
+				538724A928DC89A90048C3FA /* MAXInterstitialViewController.swift */,
 			);
 			path = "AppLovin MAX";
 			sourceTree = "<group>";
@@ -208,6 +211,7 @@
 				53EA20EA28D080A500DE18EA /* TestCaseListViewController.swift in Sources */,
 				53EA20ED28D0899900DE18EA /* TestCase.swift in Sources */,
 				53E58E7428C51D8900ED8606 /* GAMBannerViewController.swift in Sources */,
+				538724AA28DC89A90048C3FA /* MAXInterstitialViewController.swift in Sources */,
 				538724A428DC7D800048C3FA /* MAXBannerViewController.swift in Sources */,
 				53E58E7028C51D8900ED8606 /* AppDelegate.swift in Sources */,
 				53E58E7228C51D8900ED8606 /* SceneDelegate.swift in Sources */,
