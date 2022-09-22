@@ -7,7 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		5321E9D328C76E7C00B7B48B /* boltive-ios-sdk.xcframework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5321E9D228C76E7C00B7B48B /* boltive-ios-sdk.xcframework */; };
+		5387249D28DC7AE50048C3FA /* boltive-ios-sdk.xcframework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5321E9D228C76E7C00B7B48B /* boltive-ios-sdk.xcframework */; };
+		5387249E28DC7AE50048C3FA /* boltive-ios-sdk.xcframework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 5321E9D228C76E7C00B7B48B /* boltive-ios-sdk.xcframework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		53E58E7028C51D8900ED8606 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 53E58E6F28C51D8900ED8606 /* AppDelegate.swift */; };
 		53E58E7228C51D8900ED8606 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 53E58E7128C51D8900ED8606 /* SceneDelegate.swift */; };
 		53E58E7428C51D8900ED8606 /* GAMBannerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 53E58E7328C51D8900ED8606 /* GAMBannerViewController.swift */; };
@@ -27,6 +28,7 @@
 			dstPath = "";
 			dstSubfolderSpec = 10;
 			files = (
+				5387249E28DC7AE50048C3FA /* boltive-ios-sdk.xcframework in Embed Frameworks */,
 			);
 			name = "Embed Frameworks";
 			runOnlyForDeploymentPostprocessing = 0;
@@ -53,7 +55,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				5321E9D328C76E7C00B7B48B /* boltive-ios-sdk.xcframework in Frameworks */,
+				5387249D28DC7AE50048C3FA /* boltive-ios-sdk.xcframework in Frameworks */,
 				53E58E8528C51E5800ED8606 /* GoogleMobileAds in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -333,6 +335,7 @@
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = "";
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = BoltiveDemo/Info.plist;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
@@ -360,6 +363,7 @@
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = "";
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = BoltiveDemo/Info.plist;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
