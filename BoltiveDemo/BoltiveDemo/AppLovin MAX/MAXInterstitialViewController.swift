@@ -9,7 +9,7 @@ import UIKit
 import AppLovinSDK
 import Boltive
 
-fileprivate let badInterstitialAdUnitId = "d8f44b2ed5155c0d"
+fileprivate let interstitialAdUnitId = "d8f44b2ed5155c0d"
 fileprivate let okAdUnitId = "d487e5e79bc9bb5a"
 
 class MAXInterstitialViewController: UIViewController, MAAdDelegate {
@@ -18,7 +18,7 @@ class MAXInterstitialViewController: UIViewController, MAAdDelegate {
     var interstitialAd: MAInterstitialAd!
     
     let monitor = BoltiveMonitor(configuration: BoltiveConfiguration(clientId: "adl-test",
-                                                                     adUnitId: badInterstitialAdUnitId,
+                                                                     adUnitId: interstitialAdUnitId,
                                                                      adNetwork: .AppLovinMAX))
     
     override func viewDidLoad() {
@@ -45,7 +45,7 @@ class MAXInterstitialViewController: UIViewController, MAAdDelegate {
     }
     
     @objc private func loadAdTapped() {
-        loadAd(with: badInterstitialAdUnitId)
+        loadAd(with: interstitialAdUnitId)
     }
     
     private func loadAd(with adUnitId: String) {
