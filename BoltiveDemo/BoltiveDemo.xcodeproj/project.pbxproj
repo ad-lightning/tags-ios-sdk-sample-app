@@ -9,6 +9,7 @@
 /* Begin PBXBuildFile section */
 		5387249D28DC7AE50048C3FA /* boltive-ios-sdk.xcframework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5321E9D228C76E7C00B7B48B /* boltive-ios-sdk.xcframework */; };
 		5387249E28DC7AE50048C3FA /* boltive-ios-sdk.xcframework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 5321E9D228C76E7C00B7B48B /* boltive-ios-sdk.xcframework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		538724A128DC7D370048C3FA /* AppLovinSDK in Frameworks */ = {isa = PBXBuildFile; productRef = 538724A028DC7D370048C3FA /* AppLovinSDK */; };
 		53E58E7028C51D8900ED8606 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 53E58E6F28C51D8900ED8606 /* AppDelegate.swift */; };
 		53E58E7228C51D8900ED8606 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 53E58E7128C51D8900ED8606 /* SceneDelegate.swift */; };
 		53E58E7428C51D8900ED8606 /* GAMBannerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 53E58E7328C51D8900ED8606 /* GAMBannerViewController.swift */; };
@@ -56,6 +57,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				5387249D28DC7AE50048C3FA /* boltive-ios-sdk.xcframework in Frameworks */,
+				538724A128DC7D370048C3FA /* AppLovinSDK in Frameworks */,
 				53E58E8528C51E5800ED8606 /* GoogleMobileAds in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -132,6 +134,7 @@
 			name = BoltiveDemo;
 			packageProductDependencies = (
 				53E58E8428C51E5800ED8606 /* GoogleMobileAds */,
+				538724A028DC7D370048C3FA /* AppLovinSDK */,
 			);
 			productName = BoltiveDemo;
 			productReference = 53E58E6C28C51D8900ED8606 /* BoltiveDemo.app */;
@@ -163,6 +166,7 @@
 			mainGroup = 53E58E6328C51D8900ED8606;
 			packageReferences = (
 				53E58E8328C51E5800ED8606 /* XCRemoteSwiftPackageReference "swift-package-manager-google-mobile-ads" */,
+				5387249F28DC7D370048C3FA /* XCRemoteSwiftPackageReference "AppLovin-MAX-Swift-Package" */,
 			);
 			productRefGroup = 53E58E6D28C51D8900ED8606 /* Products */;
 			projectDirPath = "";
@@ -408,6 +412,14 @@
 /* End XCConfigurationList section */
 
 /* Begin XCRemoteSwiftPackageReference section */
+		5387249F28DC7D370048C3FA /* XCRemoteSwiftPackageReference "AppLovin-MAX-Swift-Package" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/AppLovin/AppLovin-MAX-Swift-Package.git";
+			requirement = {
+				kind = exactVersion;
+				version = 11.4.3;
+			};
+		};
 		53E58E8328C51E5800ED8606 /* XCRemoteSwiftPackageReference "swift-package-manager-google-mobile-ads" */ = {
 			isa = XCRemoteSwiftPackageReference;
 			repositoryURL = "https://github.com/googleads/swift-package-manager-google-mobile-ads.git";
@@ -419,6 +431,11 @@
 /* End XCRemoteSwiftPackageReference section */
 
 /* Begin XCSwiftPackageProductDependency section */
+		538724A028DC7D370048C3FA /* AppLovinSDK */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 5387249F28DC7D370048C3FA /* XCRemoteSwiftPackageReference "AppLovin-MAX-Swift-Package" */;
+			productName = AppLovinSDK;
+		};
 		53E58E8428C51E5800ED8606 /* GoogleMobileAds */ = {
 			isa = XCSwiftPackageProductDependency;
 			package = 53E58E8328C51E5800ED8606 /* XCRemoteSwiftPackageReference "swift-package-manager-google-mobile-ads" */;
