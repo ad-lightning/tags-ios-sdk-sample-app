@@ -89,9 +89,4 @@ To get started with the demo app, follow these steps:
 1. Follow instructions from `Integration` section. 
 2. Update Swift Package Manager caches(you can do it by right clicking on `Package Dependancies` section on left panel of `Xcode` and choosing `Reset Package Caches` option). 
 
-**Note**: In order to run demo examples of integration with `AppLovin MAX` you need to create your own MAX Direct Sold Campaign and MAX ad units. For further information check out these links: 
-
-- [Direct Sold Campaign](https://dash.applovin.com/documentation/mediation/features/direct-sold)
-- [Create Ad Unit](https://dash.applovin.com/documentation/mediation/ui-max/ad-units/create-ad-unit)
-
-After creating ad units, copy and paste ad unit id into `bannerAdUnitId` property in `MAXBannerViewController`'s file for banner ads and into `interstitialAdUnitId` property in `MAXInterstitialViewController`'s file for interstitial ads. Usually, it takes some time for ad units to start loading ads.
+**Note**: Examples of integration with `Applovin MAX` work on device only. To run them you should select your team on `Signing & Capabilities` tab. 
