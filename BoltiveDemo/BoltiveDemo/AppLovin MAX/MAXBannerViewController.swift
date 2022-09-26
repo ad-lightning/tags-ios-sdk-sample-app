@@ -17,7 +17,7 @@ class MAXBannerViewController: UIViewController, MAAdViewAdDelegate {
 
     let loadButton =  UIButton()
     
-    let monitor = BoltiveMonitor(configuration: BoltiveConfiguration(clientId: "adl-test", adUnitId: bannerAdUnitId, adNetwork: .AppLovinMAX))
+    let monitor = BoltiveMonitor(configuration: BoltiveConfiguration(clientId: "adl-test", adUnitId: bannerAdUnitId, adNetwork: .AppLovin))
     
     override func viewDidLoad() {
         super.viewDidLoad()

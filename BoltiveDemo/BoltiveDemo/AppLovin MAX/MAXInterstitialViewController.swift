@@ -19,7 +19,7 @@ class MAXInterstitialViewController: UIViewController, MAAdDelegate {
     
     let monitor = BoltiveMonitor(configuration: BoltiveConfiguration(clientId: "adl-test",
                                                                      adUnitId: interstitialAdUnitId,
-                                                                     adNetwork: .AppLovinMAX))
+                                                                     adNetwork: .AppLovin))
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -64,7 +64,6 @@ class MAXInterstitialViewController: UIViewController, MAAdDelegate {
     
     func didDisplay(_ ad: MAAd) {
         monitor.captureInterstitial { [weak self] in
-            print("Ad was flagged.")
             DispatchQueue.main.asyncAfter(deadline: .now() + .seconds(1)) {
                 self?.loadAd(with: okAdUnitId)
             }
