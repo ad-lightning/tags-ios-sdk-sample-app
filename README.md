@@ -10,7 +10,7 @@ Boltive iOS SDK is a native iOS solution for intercepting malicious ad creatives
 
 - We assume that the app integrates Google Mobile Ads SDK and works with Google Ad Manager, however the SDK is not limited by this assumption, see [this section](https://github.com/ad-lightning/android-sdk-sample-app#other-ad-networks-and-sdks).
 
-- Current SDK version is 0.2 (private beta).
+- Current SDK version is 0.3 (private beta).
 
 ## Integration
 
