@@ -2,6 +2,8 @@
 <!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
 <plist version="1.0">
 <dict>
+	<key>AppLovinSdkKey</key>
+	<string>kNw8SJQwptSes3O7Lms8RTyZ9dlTXJKPDMyglA8gNDxg7Gp-9nFQqtXdID9AT_l_vFXlAS4p2qfToZ6DpVqhO4</string>
 	<key>GADApplicationIdentifier</key>
 	<string>ca-app-pub-7616612881769559~5368814273</string>
 	<key>SKAdNetworkItems</key>

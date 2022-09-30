@@ -7,6 +7,7 @@
 
 import UIKit
 import GoogleMobileAds
+import AppLovinSDK
 
 @main
 class AppDelegate: UIResponder, UIApplicationDelegate {
@@ -15,6 +16,12 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
       
         GADMobileAds.sharedInstance().start(completionHandler: nil)
         GADMobileAds.sharedInstance().requestConfiguration.testDeviceIdentifiers = [ GADSimulatorID ]
+        
+        ALSdk.shared()!.mediationProvider = "max"
+        ALSdk.shared()!.userIdentifier = "USER_ID"
+        ALSdk.shared()!.initializeSdk { (configuration: ALSdkConfiguration) in
+            
+        }
         
         return true
     }

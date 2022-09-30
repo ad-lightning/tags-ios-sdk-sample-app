@@ -16,6 +16,12 @@ class TestCaseList {
                     TestCase(title: "Banner", viewController: GAMBannerViewController()),
                     TestCase(title: "Interstitial", viewController: GAMInterstitialViewController())
                 ]
+            ],
+            [
+                "Applovin MAX" : [
+                    TestCase(title: "Banner", viewController: MAXBannerViewController()),
+                    TestCase(title: "Interstitial", viewController: MAXInterstitialViewController())
+                ]
             ]
         ]
     }

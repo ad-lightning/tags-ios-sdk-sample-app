@@ -15,7 +15,7 @@ class GAMBannerViewController: UIViewController, GADBannerViewDelegate {
     
     var bannerView: GAMBannerView!
     
-    let loadButton =  UIButton()
+    let loadButton = UIButton()
     
     let monitor = BoltiveMonitor(configuration: BoltiveConfiguration(clientId: "adl-test", adUnitId: bannerAdUnitId))
     

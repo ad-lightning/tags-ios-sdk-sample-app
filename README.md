@@ -10,12 +10,13 @@ Boltive iOS SDK is a native iOS solution for intercepting malicious ad creatives
 
 - We assume that the app integrates Google Mobile Ads SDK and works with Google Ad Manager, however the SDK is not limited by this assumption, see [this section](https://github.com/ad-lightning/android-sdk-sample-app#other-ad-networks-and-sdks).
 
-- Current SDK version is 0.2 (private beta).
+- Current SDK version is 0.3 (private beta).
 
 ## Integration
 
 1. Download and unzip the SDK framework. 
 2. Drag and drop `boltive-ios-sdk.xcframework` into your Xcode project.
+3. Proceed to your target settings. Make sure that on `General` tab under `Frameworks, Libraries and Embedded Content` section `boltive-ios-sdk.xcframework` marked as `Embed & Sign`. 
 
 **Note:** Sample app project in this repo already contains a reference to the SDK in the project root, however you have to manually download and unzip the framework into the project root directory `BoltiveDemo`.
 
@@ -23,10 +24,10 @@ Boltive iOS SDK is a native iOS solution for intercepting malicious ad creatives
 
 ### Banner 
 
-`BoltiveMonitor` object can be instantiated either in a view controller or a view model object context - ideally the one designated as [GADBannerViewDelegate](https://developers.google.com/ad-manager/mobile-ads-sdk/ios/api/reference/Protocols/GADBannerViewDelegate) - so that the lifetime of the `BoltiveMonitor` is tied to the lifetime of the delegate and that of the ad banner context. Pass `clientId` and `adUnitId`(for GAM ad unit) as params.
+`BoltiveMonitor` object can be instantiated either in a view controller or a view model object context - ideally the one designated as [GADBannerViewDelegate](https://developers.google.com/ad-manager/mobile-ads-sdk/ios/api/reference/Protocols/GADBannerViewDelegate) - so that the lifetime of the `BoltiveMonitor` is tied to the lifetime of the delegate and that of the ad banner context. Pass `clientId`, `adUnitId`(for GAM, AdMob or AppLovin ad unit) and `adNetwork`(the options are `GoogleAdManager`, `AdMob` and `AppLovinMAX`; default is `GoogleAdManager`) as params.
 
 ```swift
-let boltiveMonitor = BoltiveMonitor(configuration: BoltiveConfiguration(clientId: "<your client id>", adUnitId: "<your ad unit id>"))
+let boltiveMonitor = BoltiveMonitor(configuration: BoltiveConfiguration(clientId: "<your client id>", adUnitId: "<your ad unit id>", adNetwork: .GoogleAdManager))
 ```
 
 In the `GADBannerViewDelegate`'s `bannerViewDidReceiveAd(_ bannerView: GADBannerView)` method capture the `GADBannerView` object:
@@ -47,7 +48,7 @@ Also please note that every time the ad is flagged, SDK stops monitoring it, so 
 
 `BoltiveMonitor` also supports capturing interstitial ads with a different API: `BoltiveMonitor.captureInterstitial`.  Just like for banners `BoltiveMonitor` object should be instantiated first either in a view controller or a view model object context - the one which manages interstitial presentation.
 
-Add a all to `BoltiveMonitor.captureInterstitial` method right after presenting the interstitial ad: f.e. after calling `GADInterstitialAd.present(fromRootViewController: UIViewController)`.
+Add a call of `BoltiveMonitor.captureInterstitial` method right after presenting the interstitial ad: f.e. after calling `GADInterstitialAd.present(fromRootViewController: UIViewController)`.
 
 ```swift
 monitor.captureInterstitial { [weak self] in
@@ -70,3 +71,22 @@ References:
 - [GMA SDK Get Started](https://developers.google.com/ad-manager/mobile-ads-sdk/ios/quick-start)
 - [Banner Ads](https://developers.google.com/ad-manager/mobile-ads-sdk/ios/banner)
 - [Interstitial Ads](https://developers.google.com/ad-manager/mobile-ads-sdk/ios/interstitial)
+
+## AppLovin MAX 
+
+AppLovin MAX assumes integration of AppLovin MAX SDK into the app.
+
+References: 
+
+- [AppLovin MAX SDK Integration](https://dash.applovin.com/documentation/mediation/ios/getting-started/integration)
+- [Banner Ads](https://dash.applovin.com/documentation/mediation/ios/getting-started/banners)
+- [Interstitial Ads](https://dash.applovin.com/documentation/mediation/ios/getting-started/interstitials)
+
+## BoltiveDemo App 
+
+To get started with the demo app, follow these steps:
+
+1. Follow instructions from `Integration` section. 
+2. Update Swift Package Manager caches(you can do it by right clicking on `Package Dependancies` section on left panel of `Xcode` and choosing `Reset Package Caches` option). 
+
+**Note**: Examples of integration with `Applovin MAX` work on device only. To run them you should select your team on `Signing & Capabilities` tab. 
