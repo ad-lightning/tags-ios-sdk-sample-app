@@ -1,6 +1,6 @@
 # Boltive iOS SDK
 
-Boltive iOS SDK is a native iOS solution for intercepting malicious ad creatives in mobile banner ads.  
+Boltive iOS SDK is a native iOS solution for intercepting malicious ad creatives.
 
 **Quick facts:**
 
@@ -8,7 +8,7 @@ Boltive iOS SDK is a native iOS solution for intercepting malicious ad creatives
 
 - SDK supports banner and interstitial ad formats. 
 
-- We assume that the app integrates Google Mobile Ads SDK and works with Google Ad Manager, however the SDK is not limited by this assumption, see [this section](https://github.com/ad-lightning/android-sdk-sample-app#other-ad-networks-and-sdks).
+- SDK has been explicitly tested against GAM, AdMob, AppLovin MAX, however the SDK is not limited to these integration scenarios, see [this section](https://github.com/ad-lightning/android-sdk-sample-app#other-ad-networks-and-sdks).
 
 - Current SDK version is 0.3 (private beta).
 
@@ -16,15 +16,17 @@ Boltive iOS SDK is a native iOS solution for intercepting malicious ad creatives
 
 1. Download and unzip the SDK framework. 
 2. Drag and drop `boltive-ios-sdk.xcframework` into your Xcode project.
-3. Proceed to your target settings. Make sure that on `General` tab under `Frameworks, Libraries and Embedded Content` section `boltive-ios-sdk.xcframework` marked as `Embed & Sign`. 
+3. Go to your target settings. Make sure that on the `General` tab under `Frameworks and Libraries` `boltive-ios-sdk.xcframework` is marked as `Embed & Sign`. 
 
 **Note:** Sample app project in this repo already contains a reference to the SDK in the project root, however you have to manually download and unzip the framework into the project root directory `BoltiveDemo`.
 
 ## User Guide
 
+The code snippets below are based on Google Mobile Ads SDK, but would be similar for any other ad network SDK - as all follow a pretty much common patterns.
+
 ### Banner 
 
-`BoltiveMonitor` object can be instantiated either in a view controller or a view model object context - ideally the one designated as [GADBannerViewDelegate](https://developers.google.com/ad-manager/mobile-ads-sdk/ios/api/reference/Protocols/GADBannerViewDelegate) - so that the lifetime of the `BoltiveMonitor` is tied to the lifetime of the delegate and that of the ad banner context. Pass `clientId`, `adUnitId`(for GAM, AdMob or AppLovin ad unit) and `adNetwork`(the options are `GoogleAdManager`, `AdMob` and `AppLovinMAX`; default is `GoogleAdManager`) as params.
+`BoltiveMonitor` object can be instantiated either in a view controller or a view model context - ideally the one designated as [GADBannerViewDelegate](https://developers.google.com/ad-manager/mobile-ads-sdk/ios/api/reference/Protocols/GADBannerViewDelegate) - so that the lifetime of the `BoltiveMonitor` is tied to the lifetime of the delegate and that of the ad banner context. Pass `clientId`, `adUnitId`(for GAM, AdMob or AppLovin ad unit) and `adNetwork`(the options are `GoogleAdManager`, `AdMob` and `AppLovinMAX`; default is `GoogleAdManager`) as params.
 
 ```swift
 let boltiveMonitor = BoltiveMonitor(configuration: BoltiveConfiguration(clientId: "<your client id>", adUnitId: "<your ad unit id>", adNetwork: .GoogleAdManager))
@@ -62,31 +64,24 @@ monitor.captureInterstitial { [weak self] in
 
 `Boltive SDK` was tested against GAM and Google Mobile Ads SDK integration.  However `BoltiveMonitor` API is designed to be SDK-agnostic.  The only assumption it makes is that the ad is rendered in the `WKWebView` object contained somewhere within a `UIView`-based banner view hierarchy.  Most ad SDKs provide callback mechanisms similar to a `GADBannerViewDelegate`'s' `bannerViewDidReceiveAd` method in which you can use `BoltiveMonitor` to capture the banner - as described above for the GAM scenario.
 
-## Google Ad Manager
+## Google Ad Manager and AdMob
 
-Google Ad Manager assumes integration of Google Mobile Ads SDK into the app.
+Google Ad Manager and AdMob scenarios assume the integration of Google Mobile Ads SDK into the app.
 
-References: 
-
-- [GMA SDK Get Started](https://developers.google.com/ad-manager/mobile-ads-sdk/ios/quick-start)
-- [Banner Ads](https://developers.google.com/ad-manager/mobile-ads-sdk/ios/banner)
-- [Interstitial Ads](https://developers.google.com/ad-manager/mobile-ads-sdk/ios/interstitial)
+- [Google Mobile Ads SDK for GAM](https://developers.google.com/ad-manager/mobile-ads-sdk/ios/quick-start)
+- [Google Mobile Ads SDK for AdMob](https://developers.google.com/admob/ios/quick-start)
 
 ## AppLovin MAX 
 
 AppLovin MAX assumes integration of AppLovin MAX SDK into the app.
 
-References: 
-
 - [AppLovin MAX SDK Integration](https://dash.applovin.com/documentation/mediation/ios/getting-started/integration)
-- [Banner Ads](https://dash.applovin.com/documentation/mediation/ios/getting-started/banners)
-- [Interstitial Ads](https://dash.applovin.com/documentation/mediation/ios/getting-started/interstitials)
 
 ## BoltiveDemo App 
 
 To get started with the demo app, follow these steps:
 
-1. Follow instructions from `Integration` section. 
-2. Update Swift Package Manager caches(you can do it by right clicking on `Package Dependancies` section on left panel of `Xcode` and choosing `Reset Package Caches` option). 
+1. Follow instructions from the [Integration](https://github.com/ad-lightning/android-sdk-sample-app#integration) section. 
+2. Update Swift Package Manager caches (File > Packages > Reset Package Caches). 
 
-**Note**: Examples of integration with `Applovin MAX` work on device only. To run them you should select your team on `Signing & Capabilities` tab. 
+**Note**: Most examples work on Simulator, but `Applovin MAX` examples work on device only. To run the app on your device - choose your team id on `Signing & Capabilities` tab.
