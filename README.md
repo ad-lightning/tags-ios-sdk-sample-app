@@ -24,7 +24,7 @@ Boltive iOS SDK is a native iOS solution for intercepting malicious ad creatives
 
 ### Banner 
 
-`BoltiveMonitor` object can be instantiated either in a view controller or a view model object context - ideally the one designated as [GADBannerViewDelegate](https://developers.google.com/ad-manager/mobile-ads-sdk/ios/api/reference/Protocols/GADBannerViewDelegate) - so that the lifetime of the `BoltiveMonitor` is tied to the lifetime of the delegate and that of the ad banner context. Pass `clientId`, `adUnitId`(for GAM ad unit) and `adNetwork`(the options are `GoogleAdManager` and `AppLovinMAX`; default is `GoogleAdManager`) as params.
+`BoltiveMonitor` object can be instantiated either in a view controller or a view model object context - ideally the one designated as [GADBannerViewDelegate](https://developers.google.com/ad-manager/mobile-ads-sdk/ios/api/reference/Protocols/GADBannerViewDelegate) - so that the lifetime of the `BoltiveMonitor` is tied to the lifetime of the delegate and that of the ad banner context. Pass `clientId`, `adUnitId`(for GAM, AdMob or AppLovin ad unit) and `adNetwork`(the options are `GoogleAdManager`, `AdMob` and `AppLovinMAX`; default is `GoogleAdManager`) as params.
 
 ```swift
 let boltiveMonitor = BoltiveMonitor(configuration: BoltiveConfiguration(clientId: "<your client id>", adUnitId: "<your ad unit id>", adNetwork: .GoogleAdManager))
