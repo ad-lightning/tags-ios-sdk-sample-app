@@ -8,7 +8,7 @@ Boltive iOS SDK is a native iOS solution for intercepting malicious ad creatives
 
 - SDK supports banner and interstitial ad formats. 
 
-- SDK has been explicitly tested against GAM, AdMob, AppLovin MAX, however the SDK is not limited to these integration scenarios, see [this section](https://github.com/ad-lightning/android-sdk-sample-app#other-ad-networks-and-sdks).
+- SDK has been explicitly tested against GAM, AdMob, AppLovin MAX, however the SDK is not limited to these integration scenarios, see [this section](https://github.com/ad-lightning/ios-sdk-sample-app#other-ad-networks-and-sdks).
 
 - Current SDK version is 0.3 (private beta).
 
