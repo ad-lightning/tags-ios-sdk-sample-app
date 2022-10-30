@@ -31,16 +31,16 @@ The code snippets below are based on Google Mobile Ads SDK, but would be similar
 ### Banner 
 
 `BoltiveMonitor` object can be instantiated either in a view controller or a view model context - ideally the one designated as [GADBannerViewDelegate](https://developers.google.com/ad-manager/mobile-ads-sdk/ios/api/reference/Protocols/GADBannerViewDelegate) - so that the lifetime of the `BoltiveMonitor` is tied to the lifetime of the delegate and that of the ad banner context.
-    Instantiate `BoltiveConfiguration` object and setup its properties: 
-     - clientId: unique client id provided by Boltive;
-     - adNetwork: the type of used ad network(the options are `GoogleAdManager`, `AdMob` and `AppLovinMAX` or you can specify custom ad network; default is `GoogleAdManager`);
-     - adUnitId: unique identifier for the ad unit;
-     - advertiserId: unique identifier for the advertiser;
-     - campaignId: unique identifier for the campaign;
-     - creativeId: unique identifier for the creative;
-     - lineItemId: unique identifier for the lineitem;
-     - sspRefreshCode: SSP refresh code. 
-    Pass `BoltiveConfiguration` object as `BoltiveMonitor` initialization parameter. 
+Instantiate `BoltiveConfiguration` object and setup its properties: 
+- `clientId`: unique client id provided by Boltive;
+- `adNetwork`: the type of used ad network(the options are `GoogleAdManager`, `AdMob` and `AppLovinMAX` or you can specify custom ad network; default is `GoogleAdManager`);
+- `adUnitId`: unique identifier for the ad unit;
+- `advertiserId`: unique identifier for the advertiser;
+- `campaignId`: unique identifier for the campaign;
+- `creativeId`: unique identifier for the creative;
+- `lineItemId`: unique identifier for the lineitem;
+- `sspRefreshCode`: SSP refresh code. 
+Pass `BoltiveConfiguration` object as `BoltiveMonitor` initialization parameter. 
 ```swift
 let boltiveMonitor = BoltiveMonitor(configuration: BoltiveConfiguration(clientId: "<your client id>", adUnitId: "<your ad unit id>", adNetwork: .GoogleAdManager))
 ```
