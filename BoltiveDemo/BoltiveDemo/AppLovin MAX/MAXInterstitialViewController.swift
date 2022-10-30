@@ -18,8 +18,8 @@ class MAXInterstitialViewController: UIViewController, MAAdDelegate {
     var interstitialAd: MAInterstitialAd!
     
     let monitor = BoltiveMonitor(configuration: BoltiveConfiguration(clientId: "adl-test",
-                                                                     adUnitId: interstitialAdUnitId,
-                                                                     adNetwork: .AppLovin))
+                                                                     adNetwork: .AppLovin,
+                                                                     adUnitId: interstitialAdUnitId))
     
     override func viewDidLoad() {
         super.viewDidLoad()
