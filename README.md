@@ -40,6 +40,7 @@ Instantiate `BoltiveConfiguration` object and setup its properties:
 - `creativeId`: unique identifier for the creative;
 - `lineItemId`: unique identifier for the lineitem;
 - `sspRefreshCode`: SSP refresh code. 
+
 Pass `BoltiveConfiguration` object as `BoltiveMonitor` initialization parameter. 
 ```swift
 let boltiveMonitor = BoltiveMonitor(configuration: BoltiveConfiguration(clientId: "<your client id>", adUnitId: "<your ad unit id>", adNetwork: .GoogleAdManager))
