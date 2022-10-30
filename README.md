@@ -10,7 +10,7 @@ Boltive iOS SDK is a native iOS solution for intercepting malicious ad creatives
 
 - SDK has been explicitly tested against GAM, AdMob, AppLovin MAX, however the SDK is not limited to these integration scenarios, see [this section](https://github.com/ad-lightning/ios-sdk-sample-app#other-ad-networks-and-sdks).
 
-- Current SDK version is 0.3 (private beta).
+- Current SDK version is 0.4 (private beta).
 
 ## Integration
 
@@ -30,8 +30,17 @@ The code snippets below are based on Google Mobile Ads SDK, but would be similar
 
 ### Banner 
 
-`BoltiveMonitor` object can be instantiated either in a view controller or a view model context - ideally the one designated as [GADBannerViewDelegate](https://developers.google.com/ad-manager/mobile-ads-sdk/ios/api/reference/Protocols/GADBannerViewDelegate) - so that the lifetime of the `BoltiveMonitor` is tied to the lifetime of the delegate and that of the ad banner context. Pass `clientId`, `adUnitId`(for GAM, AdMob or AppLovin ad unit) and `adNetwork`(the options are `GoogleAdManager`, `AdMob` and `AppLovinMAX`; default is `GoogleAdManager`) as params.
-
+`BoltiveMonitor` object can be instantiated either in a view controller or a view model context - ideally the one designated as [GADBannerViewDelegate](https://developers.google.com/ad-manager/mobile-ads-sdk/ios/api/reference/Protocols/GADBannerViewDelegate) - so that the lifetime of the `BoltiveMonitor` is tied to the lifetime of the delegate and that of the ad banner context.
+    Instantiate `BoltiveConfiguration` object and setup its properties: 
+     - clientId: unique client id provided by Boltive;
+     - adNetwork: the type of used ad network(the options are `GoogleAdManager`, `AdMob` and `AppLovinMAX` or you can specify custom ad network; default is `GoogleAdManager`);
+     - adUnitId: unique identifier for the ad unit;
+     - advertiserId: unique identifier for the advertiser;
+     - campaignId: unique identifier for the campaign;
+     - creativeId: unique identifier for the creative;
+     - lineItemId: unique identifier for the lineitem;
+     - sspRefreshCode: SSP refresh code. 
+    Pass `BoltiveConfiguration` object as `BoltiveMonitor` initialization parameter. 
 ```swift
 let boltiveMonitor = BoltiveMonitor(configuration: BoltiveConfiguration(clientId: "<your client id>", adUnitId: "<your ad unit id>", adNetwork: .GoogleAdManager))
 ```
