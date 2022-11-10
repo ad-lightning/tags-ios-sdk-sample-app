@@ -10,7 +10,7 @@ Boltive iOS SDK is a native iOS solution for intercepting malicious ad creatives
 
 - SDK has been explicitly tested against GAM, AdMob, AppLovin MAX, however the SDK is not limited to these integration scenarios, see [this section](https://github.com/ad-lightning/ios-sdk-sample-app#other-ad-networks-and-sdks).
 
-- Current SDK version is 0.4 (private beta).
+- Current SDK version is 0.5 (private beta).
 
 ## Integration
 
@@ -34,6 +34,13 @@ The code snippets below are based on Google Mobile Ads SDK, but would be similar
 Instantiate `BoltiveConfiguration` object and setup its properties: 
 - `clientId`: unique client id provided by Boltive;
 - `adNetwork`: the type of used ad network(the options are `GoogleAdManager`, `AdMob` and `AppLovinMAX` or you can specify custom ad network; default is `GoogleAdManager`);
+
+Pass `BoltiveConfiguration` object as `BoltiveMonitor` initialization parameter. 
+```swift
+let boltiveMonitor = BoltiveMonitor(configuration: BoltiveConfiguration(clientId: "<your client id>", adUnitId: "<your ad unit id>", adNetwork: .GoogleAdManager))
+```
+
+In the `GADBannerViewDelegate`'s `bannerViewDidReceiveAd(_ bannerView: GADBannerView)` method capture the `GADBannerView` object. You should also provide `BoltiveTagDetails` object, which contains such properties: 
 - `adUnitId`: unique identifier for the ad unit;
 - `advertiserId`: unique identifier for the advertiser;
 - `campaignId`: unique identifier for the campaign;
@@ -41,15 +48,10 @@ Instantiate `BoltiveConfiguration` object and setup its properties:
 - `lineItemId`: unique identifier for the lineitem;
 - `sspRefreshCode`: SSP refresh code. 
 
-Pass `BoltiveConfiguration` object as `BoltiveMonitor` initialization parameter. 
 ```swift
-let boltiveMonitor = BoltiveMonitor(configuration: BoltiveConfiguration(clientId: "<your client id>", adUnitId: "<your ad unit id>", adNetwork: .GoogleAdManager))
-```
-
-In the `GADBannerViewDelegate`'s `bannerViewDidReceiveAd(_ bannerView: GADBannerView)` method capture the `GADBannerView` object:
-
-```swift
-boltiveMonitor.capture(bannerView: bannerView) { bannerView in
+let tagDetails = BoltiveTagDetails(adUnitId: <ad unit id>, advertiserId: <advertiser id>, campaignId: <campaign id>,
+                creativeId: <creative id>, lineItemId: <lineitem id>, sspRefreshCode: <SSP refresh code>)
+boltiveMonitor.capture(bannerView: bannerView, tagDetails: tagDetails) { bannerView in
     // handle banner view after the ad was flagged
 }
 ```
@@ -64,10 +66,12 @@ Also please note that every time the ad is flagged, SDK stops monitoring it, so 
 
 `BoltiveMonitor` also supports capturing interstitial ads with a different API: `BoltiveMonitor.captureInterstitial`.  Just like for banners `BoltiveMonitor` object should be instantiated first either in a view controller or a view model object context - the one which manages interstitial presentation.
 
-Add a call of `BoltiveMonitor.captureInterstitial` method right after presenting the interstitial ad: f.e. after calling `GADInterstitialAd.present(fromRootViewController: UIViewController)`.
+Add a call of `BoltiveMonitor.captureInterstitial` method right after presenting the interstitial ad: f.e. after calling `GADInterstitialAd.present(fromRootViewController: UIViewController)`. You should also provide `BoltiveTagDetails` object described in banner section.
 
 ```swift
-monitor.captureInterstitial { [weak self] in
+let tagDetails = BoltiveTagDetails(adUnitId: <ad unit id>, advertiserId: <advertiser id>, campaignId: <campaign id>,
+                creativeId: <creative id>, lineItemId: <lineitem id>, sspRefreshCode: <SSP refresh code>)
+monitor.captureInterstitial(tagDetails: tagDetails) { [weak self] in
     // do any side effect here, f.e. load another interstitial ad
 }
 ```
