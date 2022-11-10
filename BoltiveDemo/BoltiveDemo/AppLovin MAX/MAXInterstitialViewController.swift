@@ -17,9 +17,7 @@ class MAXInterstitialViewController: UIViewController, MAAdDelegate {
     let loadButton = UIButton()
     var interstitialAd: MAInterstitialAd!
     
-    let monitor = BoltiveMonitor(configuration: BoltiveConfiguration(clientId: "adl-test",
-                                                                     adNetwork: .AppLovin,
-                                                                     adUnitId: interstitialAdUnitId))
+    let monitor = BoltiveMonitor(configuration: BoltiveConfiguration(clientId: "adl-test", adNetwork: .AppLovin))
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -63,7 +61,7 @@ class MAXInterstitialViewController: UIViewController, MAAdDelegate {
     }
     
     func didDisplay(_ ad: MAAd) {
-        monitor.captureInterstitial { [weak self] in
+        monitor.captureInterstitial(tagDetails: BoltiveTagDetails(adUnitId: interstitialAdUnitId)) { [weak self] in
             DispatchQueue.main.asyncAfter(deadline: .now() + .seconds(1)) {
                 self?.loadAd(with: okAdUnitId)
             }

@@ -17,9 +17,7 @@ class MAXBannerViewController: UIViewController, MAAdViewAdDelegate {
 
     let loadButton = UIButton()
     
-    let monitor = BoltiveMonitor(configuration: BoltiveConfiguration(clientId: "adl-test",
-                                                                     adNetwork: .AppLovin,
-                                                                     adUnitId: bannerAdUnitId))
+    let monitor = BoltiveMonitor(configuration: BoltiveConfiguration(clientId: "adl-test", adNetwork: .AppLovin))
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -77,7 +75,7 @@ class MAXBannerViewController: UIViewController, MAAdViewAdDelegate {
     
     func didLoad(_ ad: MAAd) {
         addBannerViewToView(bannerView)
-        monitor.capture(bannerView: bannerView) { bannerView in
+        monitor.capture(bannerView: bannerView, tagDetails: BoltiveTagDetails(adUnitId: bannerAdUnitId)) { bannerView in
             bannerView.removeFromSuperview()
         }
     }

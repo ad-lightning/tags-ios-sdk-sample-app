@@ -17,8 +17,7 @@ class GAMInterstitialViewController: UIViewController {
     let loadButton = UIButton()
     var interstitial: GADInterstitialAd?
     
-    let monitor = BoltiveMonitor(configuration: BoltiveConfiguration(clientId: "adl-test",
-                                                                     adUnitId: badInterstitialAdUnitId))
+    let monitor = BoltiveMonitor(configuration: BoltiveConfiguration(clientId: "adl-test"))
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -55,7 +54,7 @@ class GAMInterstitialViewController: UIViewController {
             if ad != nil {
                 self.interstitial = ad
                 self.interstitial?.present(fromRootViewController: self)
-                self.monitor.captureInterstitial { [weak self] in
+                self.monitor.captureInterstitial(tagDetails: BoltiveTagDetails(adUnitId: badInterstitialAdUnitId)) { [weak self] in
                     // load another ad
                     self?.loadAd(with: testAdUnitId)
                 }

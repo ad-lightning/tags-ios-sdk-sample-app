@@ -17,7 +17,7 @@ class GAMBannerViewController: UIViewController, GADBannerViewDelegate {
     
     let loadButton = UIButton()
     
-    let monitor = BoltiveMonitor(configuration: BoltiveConfiguration(clientId: "adl-test", adUnitId: bannerAdUnitId))
+    let monitor = BoltiveMonitor(configuration: BoltiveConfiguration(clientId: "adl-test"))
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -30,7 +30,7 @@ class GAMBannerViewController: UIViewController, GADBannerViewDelegate {
     
     func bannerViewDidReceiveAd(_ bannerView: GADBannerView) {
         addBannerViewToView(bannerView)
-        monitor.capture(bannerView: bannerView) { [weak self] view in
+        monitor.capture(bannerView: bannerView, tagDetails: BoltiveTagDetails(adUnitId: bannerAdUnitId)) { [weak self] view in
             self?.bannerView?.removeFromSuperview()
         }
     }
