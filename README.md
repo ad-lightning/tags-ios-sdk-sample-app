@@ -14,10 +14,10 @@ Boltive iOS SDK is a native iOS solution for intercepting malicious ad creatives
 
 ## Integration
 
-1. Download the [SDK zip archive](http://sdk.boltive.com.s3.amazonaws.com/ios/boltive-ios-sdk-0.4.2.zip) and unzip it: 
+1. Download the [SDK zip archive](https://d29z9h4vafd34g.cloudfront.net/ios/boltive-ios-sdk-0.5.4.zip) and unzip it: 
 ```
-curl -O http://sdk.boltive.com.s3.amazonaws.com/ios/boltive-ios-sdk-0.4.2.zip
-unzip boltive-ios-sdk-0.4.2.zip
+curl -O https://d29z9h4vafd34g.cloudfront.net/ios/boltive-ios-sdk-0.5.4.zip
+unzip boltive-ios-sdk-0.5.4.zip
 ```
 2. Drag and drop the unzipped `boltive-ios-sdk.xcframework` into your Xcode project.
 3. Go to your target settings. Make sure that on the `General` tab under `Frameworks and Libraries` `boltive-ios-sdk.xcframework` is marked as `Embed & Sign`. 
