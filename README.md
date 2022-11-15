@@ -116,7 +116,8 @@ AppLovin MAX assumes integration of AppLovin MAX SDK into the app.
 
 To get started with the demo app, follow these steps:
 
-1. Follow instructions from the [Integration](https://github.com/ad-lightning/android-sdk-sample-app#integration) section. 
-2. Update Swift Package Manager caches (File > Packages > Reset Package Caches). 
+1. Follow instructions from the [Cocoapods Integration](https://github.com/ad-lightning/ios-sdk-sample-app#cocoapods) section. 
+2. Open `BoltiveDemo.xcworkspace`
+3. Update Swift Package Manager caches (File > Packages > Reset Package Caches). 
 
 **Note**: Most examples work on Simulator, but `Applovin MAX` examples work on device only. To run the app on your device - choose your team id on `Signing & Capabilities` tab.
