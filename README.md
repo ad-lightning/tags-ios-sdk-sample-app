@@ -15,24 +15,29 @@ Boltive iOS SDK is a native iOS solution for intercepting malicious ad creatives
 ## Integration
 
 ### Cocoapods
-
-1. Add `Boltive` pod to your `Podfile` on a single line inside your target block: 
+1. In case there were no pods previously in your project, run
+```sh
+pod init
 ```
+to create the Podfile and supporting workspace.  
+
+2. Add `Boltive` pod to your `Podfile`: 
+```ruby
 target 'MyApp' do 
     pod 'Boltive'
 end
 ```
-2. Save your Podfile.
-3. Install pod using the next command:
-```
+3. Save the Podfile and run:
+```sh
 pod install
 ``` 
-4. Use the `MyApp.xcworkspace` to open project.
+
+4. From now on use the workspace (i.e. `MyApp.xcworkspace`) to open the project.
 
 ### Manual integration
 
 1. Download the [SDK zip archive](https://d29z9h4vafd34g.cloudfront.net/ios/boltive-ios-sdk-0.5.4.zip) and unzip it:
-```
+```sh
 curl -O https://d29z9h4vafd34g.cloudfront.net/ios/boltive-ios-sdk-0.5.4.zip
 unzip boltive-ios-sdk-0.5.4.zip
 ```
