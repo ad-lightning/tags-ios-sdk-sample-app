@@ -1,0 +1,16 @@
+PODS:
+  - Boltive (0.5.4)
+
+DEPENDENCIES:
+  - Boltive
+
+SPEC REPOS:
+  trunk:
+    - Boltive
+
+SPEC CHECKSUMS:
+  Boltive: 60c734f74ebe11d6dc59703f77949fb798ae7f44
+
+PODFILE CHECKSUM: f5de2719f1f3d46c47620eb4482cae8c5e05d810
+
+COCOAPODS: 1.11.3

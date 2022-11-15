@@ -7,7 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		5344E6C72922D8F700A1F582 /* Boltive.xcframework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5344E6C62922D8F700A1F582 /* Boltive.xcframework */; };
+		18649939981D5918DD52334D /* Pods_BoltiveDemo.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F6C6D9E7CD85F4327B38E8F5 /* Pods_BoltiveDemo.framework */; };
 		538724A128DC7D370048C3FA /* AppLovinSDK in Frameworks */ = {isa = PBXBuildFile; productRef = 538724A028DC7D370048C3FA /* AppLovinSDK */; };
 		538724A428DC7D800048C3FA /* MAXBannerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 538724A328DC7D800048C3FA /* MAXBannerViewController.swift */; };
 		538724AA28DC89A90048C3FA /* MAXInterstitialViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 538724A928DC89A90048C3FA /* MAXInterstitialViewController.swift */; };
@@ -37,7 +37,7 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
-		5344E6C62922D8F700A1F582 /* Boltive.xcframework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcframework; path = Boltive.xcframework; sourceTree = "<group>"; };
+		46AC91F5EB6042D1262EB81C /* Pods-BoltiveDemo.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-BoltiveDemo.debug.xcconfig"; path = "Target Support Files/Pods-BoltiveDemo/Pods-BoltiveDemo.debug.xcconfig"; sourceTree = "<group>"; };
 		538724A328DC7D800048C3FA /* MAXBannerViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MAXBannerViewController.swift; sourceTree = "<group>"; };
 		538724A928DC89A90048C3FA /* MAXInterstitialViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MAXInterstitialViewController.swift; sourceTree = "<group>"; };
 		53E58E6C28C51D8900ED8606 /* BoltiveDemo.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = BoltiveDemo.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -51,6 +51,8 @@
 		53EA20EC28D0899900DE18EA /* TestCase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TestCase.swift; sourceTree = "<group>"; };
 		53EA20EE28D089EF00DE18EA /* TestCaseList.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TestCaseList.swift; sourceTree = "<group>"; };
 		53EA20F028D0945C00DE18EA /* GAMInterstitialViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GAMInterstitialViewController.swift; sourceTree = "<group>"; };
+		B076CFB30FDEBAC62DBE6657 /* Pods-BoltiveDemo.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-BoltiveDemo.release.xcconfig"; path = "Target Support Files/Pods-BoltiveDemo/Pods-BoltiveDemo.release.xcconfig"; sourceTree = "<group>"; };
+		F6C6D9E7CD85F4327B38E8F5 /* Pods_BoltiveDemo.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_BoltiveDemo.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -58,15 +60,23 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				5344E6C72922D8F700A1F582 /* Boltive.xcframework in Frameworks */,
 				538724A128DC7D370048C3FA /* AppLovinSDK in Frameworks */,
 				53E58E8528C51E5800ED8606 /* GoogleMobileAds in Frameworks */,
+				18649939981D5918DD52334D /* Pods_BoltiveDemo.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		0D5CFC004B4048FCC78FD392 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				F6C6D9E7CD85F4327B38E8F5 /* Pods_BoltiveDemo.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 		538724A228DC7D600048C3FA /* AppLovin MAX */ = {
 			isa = PBXGroup;
 			children = (
@@ -79,9 +89,10 @@
 		53E58E6328C51D8900ED8606 = {
 			isa = PBXGroup;
 			children = (
-				5344E6C62922D8F700A1F582 /* Boltive.xcframework */,
 				53E58E6E28C51D8900ED8606 /* BoltiveDemo */,
 				53E58E6D28C51D8900ED8606 /* Products */,
+				81C60100927CA945EB1805DF /* Pods */,
+				0D5CFC004B4048FCC78FD392 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -127,6 +138,15 @@
 			path = GAM;
 			sourceTree = "<group>";
 		};
+		81C60100927CA945EB1805DF /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				46AC91F5EB6042D1262EB81C /* Pods-BoltiveDemo.debug.xcconfig */,
+				B076CFB30FDEBAC62DBE6657 /* Pods-BoltiveDemo.release.xcconfig */,
+			);
+			path = Pods;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -134,10 +154,12 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 53E58E8028C51D8A00ED8606 /* Build configuration list for PBXNativeTarget "BoltiveDemo" */;
 			buildPhases = (
+				93D15FC277CFA58A8414F9D2 /* [CP] Check Pods Manifest.lock */,
 				53E58E6828C51D8900ED8606 /* Sources */,
 				53E58E6928C51D8900ED8606 /* Frameworks */,
 				53E58E6A28C51D8900ED8606 /* Resources */,
 				53E58E8A28C51EAF00ED8606 /* Embed Frameworks */,
+				A59ACF8E72F8FF7B418E1F5B /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -200,6 +222,48 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		93D15FC277CFA58A8414F9D2 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-BoltiveDemo-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		A59ACF8E72F8FF7B418E1F5B /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-BoltiveDemo/Pods-BoltiveDemo-frameworks-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-BoltiveDemo/Pods-BoltiveDemo-frameworks-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-BoltiveDemo/Pods-BoltiveDemo-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		53E58E6828C51D8900ED8606 /* Sources */ = {
@@ -348,6 +412,7 @@
 		};
 		53E58E8128C51D8A00ED8606 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 46AC91F5EB6042D1262EB81C /* Pods-BoltiveDemo.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
@@ -376,6 +441,7 @@
 		};
 		53E58E8228C51D8A00ED8606 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = B076CFB30FDEBAC62DBE6657 /* Pods-BoltiveDemo.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
