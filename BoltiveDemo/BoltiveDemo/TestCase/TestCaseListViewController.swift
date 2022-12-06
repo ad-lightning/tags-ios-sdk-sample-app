@@ -38,9 +38,14 @@ class TestCaseListViewController: UIViewController, UITableViewDataSource, UITab
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let testCase = TestCaseList.testCases[indexPath.section].first?.value[indexPath.row]
         let cell = tableView.dequeueReusableCell(withIdentifier: cellId, for: indexPath)
-        var content = cell.defaultContentConfiguration()
-        content.text = testCase?.title
-        cell.contentConfiguration = content
+        if #available(iOS 14.0, *) {
+            var content = cell.defaultContentConfiguration()
+            content.text = testCase?.title
+            cell.contentConfiguration = content
+        } else {
+            cell.textLabel?.text = testCase?.title
+        }
+       
         return cell
     }
     
