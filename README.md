@@ -68,11 +68,12 @@ In the `GADBannerViewDelegate`'s `bannerViewDidReceiveAd(_ bannerView: GADBanner
 - `campaignId`: unique identifier for the campaign;
 - `creativeId`: unique identifier for the creative;
 - `lineItemId`: unique identifier for the lineitem;
-- `sspRefreshCode`: SSP refresh code. 
+- `sspRefreshCode`: SSP refresh code;
+- `appName`: name of the app(default value is `Bundle.main.bundleIdentifier`).
 
 ```swift
 let tagDetails = BoltiveTagDetails(adUnitId: <ad unit id>, advertiserId: <advertiser id>, campaignId: <campaign id>,
-                creativeId: <creative id>, lineItemId: <lineitem id>, sspRefreshCode: <SSP refresh code>)
+                creativeId: <creative id>, lineItemId: <lineitem id>, sspRefreshCode: <SSP refresh code>, appName: <app name>)
 boltiveMonitor.capture(bannerView: bannerView, tagDetails: tagDetails) { bannerView in
     // handle banner view after the ad was flagged
 }
