@@ -93,7 +93,7 @@ Add a call of `BoltiveMonitor.captureInterstitial` method right after presenting
 
 ```swift
 let tagDetails = BoltiveTagDetails(adUnitId: <ad unit id>, advertiserId: <advertiser id>, campaignId: <campaign id>,
-                creativeId: <creative id>, lineItemId: <lineitem id>, sspRefreshCode: <SSP refresh code>)
+                creativeId: <creative id>, lineItemId: <lineitem id>, sspRefreshCode: <SSP refresh code>, appName: <app name>)
 monitor.captureInterstitial(tagDetails: tagDetails) { [weak self] in
     // do any side effect here, f.e. load another interstitial ad
 }
