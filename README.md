@@ -10,7 +10,7 @@ Boltive iOS SDK is a native iOS solution for intercepting malicious ad creatives
 
 - SDK has been explicitly tested against GAM, AdMob, AppLovin MAX, however the SDK is not limited to these integration scenarios, see [this section](https://github.com/ad-lightning/ios-sdk-sample-app#other-ad-networks-and-sdks).
 
-- Current SDK version is 1.0.
+- Current SDK version is 1.1.
 
 ## Integration
 
@@ -36,10 +36,10 @@ pod install
 
 ### Manual integration
 
-1. Download the [SDK zip archive](https://d29z9h4vafd34g.cloudfront.net/ios/boltive-ios-sdk-1.0.6.zip) and unzip it:
+1. Download the [SDK zip archive](https://d29z9h4vafd34g.cloudfront.net/ios/boltive-ios-sdk-1.1.7.zip) and unzip it:
 ```sh
-curl -O https://d29z9h4vafd34g.cloudfront.net/ios/boltive-ios-sdk-1.0.6.zip
-unzip boltive-ios-sdk-1.0.6.zip
+curl -O https://d29z9h4vafd34g.cloudfront.net/ios/boltive-ios-sdk-1.1.7.zip
+unzip boltive-ios-sdk-1.1.7.zip
 ```
 2. Drag and drop the unzipped `Boltive.xcframework` into your Xcode project.
 3. Go to your target settings. Make sure that on the `General` tab under `Frameworks and Libraries` `Boltive.xcframework` is marked as `Embed & Sign`. 
