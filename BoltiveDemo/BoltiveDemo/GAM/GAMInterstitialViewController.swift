@@ -54,7 +54,7 @@ class GAMInterstitialViewController: UIViewController {
             if ad != nil {
                 self.interstitial = ad
                 self.interstitial?.present(fromRootViewController: self)
-                self.monitor.captureInterstitial(tagDetails: BoltiveTagDetails(adUnitId: badInterstitialAdUnitId)) { [weak self] in
+                self.monitor.captureInterstitial(adObject: ad, tagDetails: BoltiveTagDetails(adUnitId: badInterstitialAdUnitId)) { [weak self] in
                     // load another ad
                     self?.loadAd(with: testAdUnitId)
                 }

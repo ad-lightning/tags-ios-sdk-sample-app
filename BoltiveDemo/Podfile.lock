@@ -1,5 +1,5 @@
 PODS:
-  - Boltive (1.1.7)
+  - Boltive (1.2.9)
 
 DEPENDENCIES:
   - Boltive
@@ -9,8 +9,8 @@ SPEC REPOS:
     - Boltive
 
 SPEC CHECKSUMS:
-  Boltive: 049fa6f39208d2f63de4d7f97404bca656de06ce
+  Boltive: 647edd26119a77ac32933451f682898c970effc8
 
 PODFILE CHECKSUM: f5de2719f1f3d46c47620eb4482cae8c5e05d810
 
-COCOAPODS: 1.11.3
+COCOAPODS: 1.12.0

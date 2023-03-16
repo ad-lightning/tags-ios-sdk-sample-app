@@ -61,7 +61,7 @@ class MAXInterstitialViewController: UIViewController, MAAdDelegate {
     }
     
     func didDisplay(_ ad: MAAd) {
-        monitor.captureInterstitial(tagDetails: BoltiveTagDetails(adUnitId: interstitialAdUnitId)) { [weak self] in
+        monitor.captureInterstitial(adObject: ad, tagDetails: BoltiveTagDetails(adUnitId: interstitialAdUnitId)) { [weak self] in
             DispatchQueue.main.asyncAfter(deadline: .now() + .seconds(1)) {
                 self?.loadAd(with: okAdUnitId)
             }
