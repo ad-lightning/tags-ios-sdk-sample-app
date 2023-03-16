@@ -10,7 +10,7 @@ Boltive iOS SDK is a native iOS solution for intercepting malicious ad creatives
 
 - SDK has been explicitly tested against GAM, AdMob, AppLovin MAX, however the SDK is not limited to these integration scenarios, see [this section](https://github.com/ad-lightning/ios-sdk-sample-app#other-ad-networks-and-sdks).
 
-- Current SDK version is 1.1.
+- Current SDK version is 1.2.
 
 ## Integration
 
@@ -36,10 +36,10 @@ pod install
 
 ### Manual integration
 
-1. Download the [SDK zip archive](https://d29z9h4vafd34g.cloudfront.net/ios/boltive-ios-sdk-1.1.7.zip) and unzip it:
+1. Download the [SDK zip archive](https://d29z9h4vafd34g.cloudfront.net/ios/boltive-ios-sdk-1.2.9.zip) and unzip it:
 ```sh
-curl -O https://d29z9h4vafd34g.cloudfront.net/ios/boltive-ios-sdk-1.1.7.zip
-unzip boltive-ios-sdk-1.1.7.zip
+curl -O https://d29z9h4vafd34g.cloudfront.net/ios/boltive-ios-sdk-1.2.9.zip
+unzip boltive-ios-sdk-1.2.9.zip
 ```
 2. Drag and drop the unzipped `Boltive.xcframework` into your Xcode project.
 3. Go to your target settings. Make sure that on the `General` tab under `Frameworks and Libraries` `Boltive.xcframework` is marked as `Embed & Sign`. 
@@ -89,12 +89,12 @@ Also please note that every time the ad is flagged, SDK stops monitoring it, so 
 
 `BoltiveMonitor` also supports capturing interstitial ads with a different API: `BoltiveMonitor.captureInterstitial`.  Just like for banners `BoltiveMonitor` object should be instantiated first either in a view controller or a view model object context - the one which manages interstitial presentation.
 
-Add a call of `BoltiveMonitor.captureInterstitial` method right after presenting the interstitial ad: f.e. after calling `GADInterstitialAd.present(fromRootViewController: UIViewController)`. You should also provide `BoltiveTagDetails` object described in banner section.
+Add a call of `BoltiveMonitor.captureInterstitial` method right after presenting the interstitial ad: f.e. after calling `GADInterstitialAd.present(fromRootViewController: UIViewController)`. You should pass ad object, that you receive after loading ad(f.e. `GADInterstitialAd`). If there is no such object, you can pass `nil`. You should also provide `BoltiveTagDetails` object described in banner section.
 
 ```swift
 let tagDetails = BoltiveTagDetails(adUnitId: <ad unit id>, advertiserId: <advertiser id>, campaignId: <campaign id>,
-                creativeId: <creative id>, lineItemId: <lineitem id>, sspRefreshCode: <SSP refresh code>, appName: <app name>)
-monitor.captureInterstitial(tagDetails: tagDetails) { [weak self] in
+                creativeId: <creative id>, lineItemId: <lineitem id>, sspRefreshCode: <SSP refresh code>)
+monitor.captureInterstitial(adObject: adObject, tagDetails: tagDetails) { [weak self] in
     // do any side effect here, f.e. load another interstitial ad
 }
 ```
