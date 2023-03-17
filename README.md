@@ -10,7 +10,7 @@ Boltive iOS SDK is a native iOS solution for intercepting malicious ad creatives
 
 - SDK has been explicitly tested against GAM, AdMob, AppLovin MAX, however the SDK is not limited to these integration scenarios, see [this section](https://github.com/ad-lightning/ios-sdk-sample-app#other-ad-networks-and-sdks).
 
-- Current SDK version is 1.2.
+- Current SDK version is 1.2.  See [release notes](CHANGELOG.md).
 
 ## Integration
 
@@ -62,7 +62,7 @@ Pass `BoltiveConfiguration` object as `BoltiveMonitor` initialization parameter.
 let boltiveMonitor = BoltiveMonitor(configuration: BoltiveConfiguration(clientId: "<your client id>", adUnitId: "<your ad unit id>", adNetwork: .GoogleAdManager))
 ```
 
-In the `GADBannerViewDelegate`'s `bannerViewDidReceiveAd(_ bannerView: GADBannerView)` method capture the `GADBannerView` object. You should also provide `BoltiveTagDetails` object, which contains such properties: 
+In the `GADBannerViewDelegate`'s `bannerViewDidReceiveAd(_ bannerView: GADBannerView)` method capture the `GADBannerView` object. For tracking purposes please provide `BoltiveTagDetails` object with these optional properties: 
 - `adUnitId`: unique identifier for the ad unit;
 - `advertiserId`: unique identifier for the advertiser;
 - `campaignId`: unique identifier for the campaign;
@@ -70,6 +70,8 @@ In the `GADBannerViewDelegate`'s `bannerViewDidReceiveAd(_ bannerView: GADBanner
 - `lineItemId`: unique identifier for the lineitem;
 - `sspRefreshCode`: SSP refresh code;
 - `appName`: name of the app(default value is `Bundle.main.bundleIdentifier`).
+
+If ad server details (`advertiserId`, `campaignId`, `creativeId` and `lineItemId`) are not provided - BoltiveSDK will try to obtain them from the `GADResponseInfo` object in the case of Google Mobile Ads SDK as a Primary SDK.
 
 ```swift
 let tagDetails = BoltiveTagDetails(adUnitId: <ad unit id>, advertiserId: <advertiser id>, campaignId: <campaign id>,
