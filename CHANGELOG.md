@@ -1,6 +1,10 @@
 Releases
 ========
 
+1.3
+---
+Ad attribution improvements for GAM.
+
 1.2
 ---
 If user does not provide ad server details (`advertiserId`, `campaignId`, `creativeId` and `lineItemId`) as part of the `BoltiveTagDetails` struct - BoltiveSDK will try to obtain these from the `GADResponseInfo` object in the case of Google Mobile Ads SDK as a Primary SDK.  This is supported for both Banners and Interstitials.
