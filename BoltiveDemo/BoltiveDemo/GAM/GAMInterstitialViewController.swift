@@ -9,7 +9,7 @@ import UIKit
 import GoogleMobileAds
 import Boltive
 
-fileprivate let badInterstitialAdUnitId = "/21808260008/boltive-interstial-with-bad-url"
+fileprivate let badInterstitialAdUnitId = "/21808260008/btest_interstitial_bad"
 fileprivate let testAdUnitId = "ca-app-pub-3940256099942544/4411468910"
 
 class GAMInterstitialViewController: UIViewController {

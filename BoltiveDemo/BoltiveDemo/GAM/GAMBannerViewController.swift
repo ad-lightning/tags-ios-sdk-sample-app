@@ -9,7 +9,7 @@ import UIKit
 import GoogleMobileAds
 import Boltive
 
-fileprivate let bannerAdUnitId = "/21808260008/boltive-banner-with-ok-and-bad-url"
+fileprivate let bannerAdUnitId = "/21808260008/btest_banner_random"
 
 class GAMBannerViewController: UIViewController, GADBannerViewDelegate {
     
