@@ -83,7 +83,12 @@ boltiveMonitor.capture(bannerView: bannerView, tagDetails: tagDetails) { bannerV
 
 The call of this closure signals that the rendered ad is flagged by `BoltiveMonitor`. **In the provided callback closure you should reload the banner and/or do any other side effects as needed, f.e. hide the banner or use a different ad unit.**
 
-**Note**: Unlike web, on mobile `BoltiveMonitor` does not actually block or prevent **banner ads** (it is different for interstitials, they are dismissed automatically) from rendering - it only reports them and signals to the app native code.  **It is your responsibility as the app developer to take appropriate action in the callback closure**: i.e. to reload and refresh the banner, render a different ad unit, remove the banner alltogether etc.  The most common action to take would be to repeat banner loading by calling `bannerView.load(_ request: GADRequest?)` method.  
+**Note**: `BoltiveMonitor` blocker will prevent the malicious ad creative from rendering - so the ad would become blank, 
+however it will not automatically remove the native banner view from the screen (so worst case the user will see a blank ad).  
+It will send a signal to the app native code (via the callback mechanism). 
+**Then it is the responsibility of the app developer to take the appropriate action in the callback implementation**: f.e. reload and refresh the
+banner, render a different ad unit, remove the banner altogether etc. The most common action to
+take would be to call the native method that would reload the by calling `bannerView.load(_ request: GADRequest?)` method.
 
 Also please note that every time the ad is flagged, SDK stops monitoring it, so **make sure you recapture the banner in every `bannerViewDidReceiveAd` delegate call**.
 
