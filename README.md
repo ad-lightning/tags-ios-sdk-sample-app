@@ -85,7 +85,7 @@ The call of this closure signals that the rendered ad is flagged by `BoltiveMoni
 
 **Note**: `BoltiveMonitor` blocker will prevent the malicious ad creative from rendering - so the ad would become blank, 
 however it will not automatically remove the native banner view from the screen (so worst case the user will see a blank ad).  
-It will send a signal to the app native code (via the callback mechanism). 
+It will send a signal to the app native code (via the callback mechanism).   
 **Then it is the responsibility of the app developer to take the appropriate action in the callback implementation**: f.e. reload and refresh the
 banner, render a different ad unit, remove the banner altogether etc. The most common action to
 take would be to call the native method that would reload the by calling `bannerView.load(_ request: GADRequest?)` method.
