@@ -1,4 +1,5 @@
 {
+  "originHash" : "7270e6f4d187968bbace6c32337f441a3dc80e3e43d449e92eb7b3382620a6c8",
   "pins" : [
     {
       "identity" : "applovin-max-swift-package",
@@ -10,48 +11,12 @@
       }
     },
     {
-      "identity" : "googleappmeasurement",
-      "kind" : "remoteSourceControl",
-      "location" : "https://github.com/google/GoogleAppMeasurement.git",
-      "state" : {
-        "revision" : "9209b95a2593985569918e5e5ee2bf4ef8ff3640",
-        "version" : "10.9.0"
-      }
-    },
-    {
-      "identity" : "googleutilities",
-      "kind" : "remoteSourceControl",
-      "location" : "https://github.com/google/GoogleUtilities.git",
-      "state" : {
-        "revision" : "871d43135925cde39ef7421d8723ce47edfdcc39",
-        "version" : "7.11.1"
-      }
-    },
-    {
-      "identity" : "nanopb",
-      "kind" : "remoteSourceControl",
-      "location" : "https://github.com/firebase/nanopb.git",
-      "state" : {
-        "revision" : "819d0a2173aff699fb8c364b6fb906f7cdb1a692",
-        "version" : "2.30909.0"
-      }
-    },
-    {
-      "identity" : "promises",
-      "kind" : "remoteSourceControl",
-      "location" : "https://github.com/google/promises.git",
-      "state" : {
-        "revision" : "ec957ccddbcc710ccc64c9dcbd4c7006fcf8b73a",
-        "version" : "2.2.0"
-      }
-    },
-    {
       "identity" : "swift-package-manager-google-mobile-ads",
       "kind" : "remoteSourceControl",
       "location" : "https://github.com/googleads/swift-package-manager-google-mobile-ads.git",
       "state" : {
-        "revision" : "78f4c64d0f1900e54529e4c78075d663ca67d6e0",
-        "version" : "9.14.0"
+        "revision" : "5ff977255c2ba5844e7e9da779f1f2a5a00e0028",
+        "version" : "11.2.0"
       }
     },
     {
@@ -59,10 +24,10 @@
       "kind" : "remoteSourceControl",
       "location" : "https://github.com/googleads/swift-package-manager-google-user-messaging-platform.git",
       "state" : {
-        "revision" : "3b924ce3313a5fd2fc6a8dc889a8c38f76890fe3",
-        "version" : "2.0.0"
+        "revision" : "cfe8b2ae16b9bc81f4cdf1d1a12a01a452489c32",
+        "version" : "2.3.0"
       }
     }
   ],
-  "version" : 2
+  "version" : 3
 }
