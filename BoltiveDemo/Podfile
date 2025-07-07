@@ -4,5 +4,5 @@ target 'BoltiveDemo' do
   use_frameworks!
 
   # Pods for BoltiveDemo
-  pod 'Boltive'
+  pod 'Boltive', '1.3.12'
 end

@@ -1,16 +1,16 @@
 PODS:
-  - Boltive (1.3.11)
+  - Boltive (1.3.12)
 
 DEPENDENCIES:
-  - Boltive
+  - Boltive (= 1.3.12)
 
 SPEC REPOS:
   trunk:
     - Boltive
 
 SPEC CHECKSUMS:
-  Boltive: 088cc04147c6d29055774eb5fe7d8c1e44870924
+  Boltive: cc2aab8e2d43ed545111110227402b76d26e05a1
 
-PODFILE CHECKSUM: f5de2719f1f3d46c47620eb4482cae8c5e05d810
+PODFILE CHECKSUM: 71f5cd0d3dc4fdf4f53a18ec18f21b770f09d2e4
 
-COCOAPODS: 1.15.2
+COCOAPODS: 1.16.2
