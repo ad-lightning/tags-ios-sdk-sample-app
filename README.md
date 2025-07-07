@@ -36,10 +36,10 @@ pod install
 
 ### Manual integration
 
-1. Download the [SDK zip archive](https://d29z9h4vafd34g.cloudfront.net/ios/boltive-ios-sdk-1.3.11.zip) and unzip it:
+1. Download the [SDK zip archive](https://d29z9h4vafd34g.cloudfront.net/ios/boltive-ios-sdk-1.3.12.zip) and unzip it:
 ```sh
-curl -O https://d29z9h4vafd34g.cloudfront.net/ios/boltive-ios-sdk-1.3.11.zip
-unzip boltive-ios-sdk-1.3.11.zip
+curl -O https://d29z9h4vafd34g.cloudfront.net/ios/boltive-ios-sdk-1.3.12.zip
+unzip boltive-ios-sdk-1.3.12.zip
 ```
 2. Drag and drop the unzipped `Boltive.xcframework` into your Xcode project.
 3. Go to your target settings. Make sure that on the `General` tab under `Frameworks and Libraries` `Boltive.xcframework` is marked as `Embed & Sign`. 
