@@ -19,8 +19,8 @@ import {
 import BoltiveSDK, { BoltiveAdNetwork } from './src/BoltiveModule';
 
 const bannerAdUnitId = Platform.select({
-    ios: '/21808260008/btest_banner_random',
-    android: '/21808260008/btest_banner_random',
+    ios: '/21808260008/btest-banner-bad-test-com',
+    android: '/21808260008/btest-banner-bad-test-com',
 });
 
 const App = () => {
