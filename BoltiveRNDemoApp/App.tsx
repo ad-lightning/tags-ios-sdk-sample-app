@@ -52,7 +52,7 @@ const App = () => {
         setBoltiveStatus('Initializing...');
 
         await boltiveSDK.initialize({
-            clientId: 'adl-test',
+            clientId: 'enhance-epark-sdk-ios',
             adNetwork: BoltiveAdNetwork.GoogleAdManager
         });
 
