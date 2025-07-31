@@ -29,6 +29,7 @@ const App = () => {
     const [monitorStatus, setMonitorStatus] = useState('Not initialized');
     const [boltiveStatus, setBoltiveStatus] = useState('Not initialized');
     const [blockCount, setBlockCount] = useState(0);
+    const [isAdBlocked, setIsAdBlocked] = useState(false);
 
     const bannerRef = useRef(null);
     const boltiveSDK = BoltiveSDK.getInstance();
@@ -51,14 +52,20 @@ const App = () => {
     const initializeBoltive = async () => {
         setBoltiveStatus('Initializing...');
 
-        await boltiveSDK.initialize({
-            clientId: 'enhance-epark-sdk-ios',
-            adNetwork: BoltiveAdNetwork.GoogleAdManager
-        });
+        try {
+            await boltiveSDK.initialize({
+                clientId: Platform.select({
+                    ios: 'enhance-epark-sdk-ios', 
+                    android: 'enhance-epark-sdk-android'
+                }),
+                adNetwork: BoltiveAdNetwork.GoogleAdManager
+            });
 
-        const version = await boltiveSDK.getSDKVersion();
-        console.log('Boltive SDK Version:', version);
-        setBoltiveStatus(`Ready (v${version})`);
+            setBoltiveStatus('Ready');
+        } catch (error) {
+            console.log('Boltive SDK error:', error);
+            setBoltiveStatus('Initialization failed');
+        }
     };
 
     const handleAdLoaded = async () => {
@@ -82,11 +89,23 @@ const App = () => {
                         appName: 'BoltiveDemo'
                     };
 
-                    console.log('Capturing banner with Boltive...');
+                    console.log('Analyzing banner with Boltive...');
                     const result = await boltiveSDK.captureBanner(reactTag, tagDetails);
-                    console.log('Boltive capture result:', result);
+                    console.log('Boltive analysis result:', result);
 
-                    setBlockCount(prevCount => prevCount + 1);
+                    // Common blocking logic - handle the blocking decision here
+                    if (result.shouldBlock) {
+                        console.log('Banner should be blocked:', result.reason);
+                        
+                        // Use React state to hide the banner (common approach)
+                        setIsAdBlocked(true);
+                        setBlockCount(prevCount => prevCount + 1);
+                        setBoltiveStatus('Ready - Ad blocked!');
+                    } else {
+                        console.log('Banner analysis complete - no blocking needed');
+                        setIsAdBlocked(false);
+                        setBoltiveStatus('Ready - Ad safe');
+                    }
                 } else {
                     console.warn('Could not get React tag for banner');
                 }
@@ -94,8 +113,8 @@ const App = () => {
                 console.warn('Banner ref is null');
             }
         } catch (error) {
-            console.error('Failed to capture banner with Boltive:', error);
-            setBoltiveStatus(prev => prev.includes('Failed') ? prev : prev + ' - Capture failed');
+            console.error('Failed to analyze banner with Boltive:', error);
+            setBoltiveStatus('Ready - Analysis failed');
         }
     };
 
@@ -106,8 +125,9 @@ const App = () => {
 
     const loadAd = () => {
         setIsAdLoaded(false);
+        setIsAdBlocked(false);
         setAdKey(prevKey => prevKey + 1);
-        setBoltiveStatus(prev => prev.replace(' - Capture failed', ''));
+        setBoltiveStatus('Ready');
     };
 
     const resetCounter = () => {
@@ -147,14 +167,21 @@ const App = () => {
                 </View>
 
                 <View style={styles.adContainer}>
-                    <BannerAd
-                        key={adKey}
-                        ref={bannerRef}
-                        unitId={bannerAdUnitId}
-                        size={BannerAdSize.MEDIUM_RECTANGLE}
-                        onAdLoaded={handleAdLoaded}
-                        onAdFailedToLoad={handleAdFailedToLoad}
-                    />
+                    {!isAdBlocked ? (
+                        <BannerAd
+                            key={adKey}
+                            ref={bannerRef}
+                            unitId={bannerAdUnitId}
+                            size={BannerAdSize.MEDIUM_RECTANGLE}
+                            onAdLoaded={handleAdLoaded}
+                            onAdFailedToLoad={handleAdFailedToLoad}
+                        />
+                    ) : (
+                        <View style={styles.blockedAdPlaceholder}>
+                            <Text style={styles.blockedAdText}>🛡️ Ad Blocked</Text>
+                            <Text style={styles.blockedAdSubtext}>Malicious content detected</Text>
+                        </View>
+                    )}
                 </View>
             </View>
         </SafeAreaView>
@@ -231,6 +258,28 @@ const styles = StyleSheet.create({
         alignItems: 'center',
         justifyContent: 'center',
         minHeight: 250,
+    },
+    blockedAdPlaceholder: {
+        width: 300,
+        height: 250,
+        backgroundColor: '#F8F8F8',
+        borderWidth: 2,
+        borderColor: '#FF3B30',
+        borderStyle: 'dashed',
+        borderRadius: 8,
+        alignItems: 'center',
+        justifyContent: 'center',
+    },
+    blockedAdText: {
+        fontSize: 18,
+        fontWeight: 'bold',
+        color: '#FF3B30',
+        marginBottom: 5,
+    },
+    blockedAdSubtext: {
+        fontSize: 14,
+        color: '#666666',
+        textAlign: 'center',
     },
 });
 

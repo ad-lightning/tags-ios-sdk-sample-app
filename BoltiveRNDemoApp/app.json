@@ -2,6 +2,7 @@
   "name": "BoltiveRNDemoApp",
   "displayName": "BoltiveRNDemoApp",
   "react-native-google-mobile-ads": {
-    "ios_app_id": "ca-app-pub-7616612881769559~5368814273"
+    "ios_app_id": "ca-app-pub-7616612881769559~5368814273",
+    "android_app_id": "ca-app-pub-7616612881769559~5368814273"
   }
 }

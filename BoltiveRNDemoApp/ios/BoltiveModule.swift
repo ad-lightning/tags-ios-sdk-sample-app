@@ -36,16 +36,6 @@ class BoltiveModule: NSObject {
   }
   
   @objc
-  func getSDKVersion(
-    _ resolver: @escaping RCTPromiseResolveBlock,
-    rejecter: @escaping RCTPromiseRejectBlock
-  ) {
-    resolver(
-      BoltiveMonitor.sdkVersion
-    )
-  }
-  
-  @objc
   func captureBanner(
     _ reactTag: NSNumber,
     tagDetails: NSDictionary,
@@ -68,10 +58,16 @@ class BoltiveModule: NSObject {
       let boltiveTagDetails = self.createTagDetails(from: tagDetails)
       
       boltiveMonitor.capture(bannerView: view, tagDetails: boltiveTagDetails) { blockedView in
-        // Ad was blocked - hide or remove the blocked view
+        // Return analysis results instead of blocking directly
         DispatchQueue.main.async {
-          blockedView.removeFromSuperview()
-          resolver("BLOCKED.")
+          let result: [String: Any] = [
+            "status": "analyzed",
+            "shouldBlock": true,
+            "reason": "Malicious ad detected by Boltive iOS SDK",
+            "reactTag": reactTag.intValue,
+            "adUnitId": boltiveTagDetails.adUnitId ?? ""
+          ]
+          resolver(result)
         }
       }
     }

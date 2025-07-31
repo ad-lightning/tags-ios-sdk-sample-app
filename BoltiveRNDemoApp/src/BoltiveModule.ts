@@ -16,6 +16,14 @@ export interface BoltiveTagDetails {
     appName?: string;
 }
 
+export interface BoltiveAnalysisResult {
+    status: string;
+    shouldBlock: boolean;
+    reason?: string;
+    reactTag: number;
+    adUnitId?: string;
+}
+
 export interface BoltiveConfiguration {
     clientId: string;
     adNetwork: BoltiveAdNetwork | string;
@@ -45,11 +53,7 @@ class BoltiveSDK {
         }
     }
 
-    public async getSDKVersion(): Promise<string> {
-        return BoltiveModule.getSDKVersion();
-    }
-
-    public async captureBanner(reactTag: number, tagDetails: BoltiveTagDetails): Promise<string> {
+    public async captureBanner(reactTag: number, tagDetails: BoltiveTagDetails): Promise<BoltiveAnalysisResult> {
         if (!this.isInitialized) {
             throw new Error('Boltive SDK not initialized. Call initialize() first.');
         }
